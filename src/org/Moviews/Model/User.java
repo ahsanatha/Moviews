@@ -42,6 +42,9 @@ public class User {
         this.username = username;
     }
 
+    public User() {
+    }
+
     public String getId_user() {
         return id_user;
     }
@@ -97,8 +100,19 @@ public class User {
     public void setTempat_lahir(String tempat_lahir) {
         this.tempat_lahir = tempat_lahir;
     }
-
-
     
+    public boolean checkUser(String uname, String pass) throws SQLException{
+        boolean valid = false;
+        Database db = new Database();
+        db.Connect();
+        String query = "SELECT password FROM user WHERE 'username' LIKE '"+uname+"'";
+        db.setRs(query);
+        System.out.println(db.getRs().getString("password"));
+        valid = true;
+        db.Disconnect();
+        return valid;
+    }
+    
+ 
     
 }
