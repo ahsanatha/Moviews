@@ -4,8 +4,13 @@
  * and open the template in the editor.
  */
 package org.Moviews.Model;
-
+import org.Moviews.Database.Database;
 import java.sql.Date;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.Moviews.Database.Database;
 
 /**
  *
@@ -93,7 +98,7 @@ public class User {
         this.tempat_lahir = tempat_lahir;
     }
 
-    
+
     
     
 }

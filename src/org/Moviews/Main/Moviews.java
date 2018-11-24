@@ -6,7 +6,6 @@ public class Moviews {
     
 
     public static void main(String[] args) {
-        String atha = "atha";
-        System.out.println("namanya "+atha);
+       
     }
 }

@@ -63,7 +63,7 @@ public class Database {
         if(Manipulate(query)){
             try {
                 this.rs = stmt.executeQuery(query);
-                if(rs.getString("password") == pass){
+                if(rs.getString("password").equals(pass)){
                     valid = true;
                 }
             } catch (SQLException ex) {
