@@ -5,7 +5,11 @@
  */
 package org.Moviews.View;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Date;
 import javax.swing.ButtonGroup;
+import javax.swing.JComboBox;
 
 /**
  *
@@ -47,7 +51,7 @@ public class ViewSignUp extends javax.swing.JFrame {
         rdBtnAdmin = new javax.swing.JRadioButton();
         jLabel7 = new javax.swing.JLabel();
         tfTempatLahir = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnSignUp = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         cbTanggal = new javax.swing.JComboBox<>();
         cbBulan = new javax.swing.JComboBox<>();
@@ -96,7 +100,7 @@ public class ViewSignUp extends javax.swing.JFrame {
 
         jLabel7.setText("Tempat Lahir");
 
-        jButton1.setText("Sign Up");
+        btnSignUp.setText("Sign Up");
 
         jLabel8.setText("Tanggal Lahir");
 
@@ -125,7 +129,7 @@ public class ViewSignUp extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1))
+                        .addComponent(btnSignUp))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -212,7 +216,7 @@ public class ViewSignUp extends javax.swing.JFrame {
                     .addComponent(jLabel7)
                     .addComponent(tfTempatLahir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(btnSignUp)
                 .addGap(28, 28, 28))
         );
 
@@ -285,10 +289,10 @@ public class ViewSignUp extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup btnGroupJK;
     private javax.swing.ButtonGroup btnGroupTP;
+    private javax.swing.JButton btnSignUp;
     private javax.swing.JComboBox<String> cbBulan;
     private javax.swing.JComboBox<String> cbTahun;
     private javax.swing.JComboBox<String> cbTanggal;
-    private javax.swing.JButton jButton1;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -371,20 +375,42 @@ public class ViewSignUp extends javax.swing.JFrame {
     }
 
 
-    public String getTfFullName() {
+    public String getFullName() {
         return tfFullName.getText();
     }
 
-    public String getTfPassword() {
+    public String getPassword() {
         return tfPassword.getText();
     }
 
-    public String getTfTempatLahir() {
+    public String getTempatLahir() {
         return tfTempatLahir.getText();
     }
 
-    public String getTfUsername() {
+    public String getUsername() {
         return tfUsername.getText();
+    }
+
+    public String getBulan() {
+        return cbBulan.getSelectedItem().toString();
+    }
+
+    public String getTahun() {
+        return cbTahun.getSelectedItem().toString();
+    }
+
+    public String getTanggal() {
+        return cbTanggal.getSelectedItem().toString();
+    }
+    
+    public Date getTglLahir(){
+        Date d = new Date(Integer.parseInt(getTanggal()), 
+                Integer.parseInt(getBulan()), Integer.parseInt(getTanggal()));
+        return d;
+    }
+    
+    public void setSignUpEvent(ActionListener act){
+        btnSignUp.addActionListener(act);
     }
     
     

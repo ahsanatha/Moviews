@@ -42,7 +42,7 @@ public class ControllerSignIn {
             
         });
         //atur sign up
-        this.view.setSignOutEvent(new ActionListener(){
+        this.view.setSignUpEvent(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
                 toSignUp();
