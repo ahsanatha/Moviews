@@ -25,6 +25,8 @@ public class User {
     private String username;
     private Date tgl_lahir;
     private String tempat_lahir;
+    private int JUser;
+    
 
     public User(String nama_lengkap, char tipe, char jenis_kelamin, String password, String username, Date tgl_lahir, String tempat_lahir) {
         this.nama_lengkap = nama_lengkap;
@@ -36,14 +38,9 @@ public class User {
         this.tempat_lahir = tempat_lahir;
     }
 
-    public User(char tipe, String password, String username) {
-        this.tipe = tipe;
-        this.password = password;
-        this.username = username;
-    }
-
     public User() {
     }
+
 
     public String getId_user() {
         return id_user;
@@ -101,6 +98,8 @@ public class User {
         this.tempat_lahir = tempat_lahir;
     }
     
+    
+    
     public boolean checkUser(String uname, String pass) throws SQLException{
         boolean valid = false;
         Database db = new Database();
@@ -108,8 +107,8 @@ public class User {
         String query = "SELECT * FROM `user` WHERE `username` LIKE '"+uname+"'";
         System.out.println(query);
         db.setRs(query);
-        if (!db.getRs().isBeforeFirst()) {    
-            System.out.println("Username not found"); 
+        if (db.isRsEmpty(db.getRs())) {
+            System.out.println("Username not found");
         }else {
             while(db.getRs().next()){
                 if(db.getRs().getString("password").equals(pass)){
@@ -118,9 +117,47 @@ public class User {
                     System.out.println("Wrong Password");
                 }
             }
-        } 
+        }
         db.Disconnect();
         return valid;
+    }
+    
+    public int getCurrentId() throws SQLException{
+        int x = 0;
+        String query = "SELECT COUNT(id_user) FROM `user`";
+        Database db = new Database();
+        db.Connect();
+        System.out.println(query);
+        db.setRs(query);
+        if(!db.isRsEmpty(db.getRs())){
+            while(db.getRs().next()){
+                this.JUser = db.getRs().getInt("COUNT(id_user)");
+                System.out.println("Banyak user : "+this.JUser);
+                x = this.JUser;
+            }
+        }
+        db.Disconnect();
+        return x;
+    }
+    
+    public void addUser(User u) throws SQLException{
+        String query = "INSERT INTO `user` VALUES ('";
+        query += "USER"+(getCurrentId()+1)  +"','";
+        query += u.getNama_lengkap() +"','";
+        query += u.getTipe() + "','";
+        query += u.getJenis_kelamin() + "','";
+        query += u.getPassword() + "','";
+        query += u.getUsername() + "','";
+        query += u.getTgl_lahir() + "','";
+        query += u.getTempat_lahir() + "')";
+        Database db = new Database();
+        db.Connect();
+        System.out.println(query);
+        if(db.Manipulate(query)){
+            System.out.println("Add Value Succes!");
+        }else{
+            System.out.println("Add Value Failed.");
+        } 
     }
     
  

@@ -211,7 +211,7 @@ public class ViewSignIn extends javax.swing.JFrame {
         btnSignIn.addActionListener(act);
     }
     
-    public void setSignOutEvent(ActionListener act){
+    public void setSignUpEvent(ActionListener act){
         btnSignUp.addActionListener(act);
     }
 }

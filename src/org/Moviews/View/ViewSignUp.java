@@ -5,6 +5,12 @@
  */
 package org.Moviews.View;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Date;
+import javax.swing.ButtonGroup;
+import javax.swing.JComboBox;
+
 /**
  *
  * @author TSR
@@ -45,7 +51,7 @@ public class ViewSignUp extends javax.swing.JFrame {
         rdBtnAdmin = new javax.swing.JRadioButton();
         jLabel7 = new javax.swing.JLabel();
         tfTempatLahir = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnSignUp = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         cbTanggal = new javax.swing.JComboBox<>();
         cbBulan = new javax.swing.JComboBox<>();
@@ -94,7 +100,7 @@ public class ViewSignUp extends javax.swing.JFrame {
 
         jLabel7.setText("Tempat Lahir");
 
-        jButton1.setText("Sign Up");
+        btnSignUp.setText("Sign Up");
 
         jLabel8.setText("Tanggal Lahir");
 
@@ -123,7 +129,7 @@ public class ViewSignUp extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1))
+                        .addComponent(btnSignUp))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,10 +148,6 @@ public class ViewSignUp extends javax.swing.JFrame {
                                         .addComponent(rdBtnLaki)
                                         .addGap(32, 32, 32)
                                         .addComponent(rdBtnPerempuan))))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addGap(18, 18, 18)
-                                .addComponent(tfTempatLahir))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -168,7 +170,11 @@ public class ViewSignUp extends javax.swing.JFrame {
                                         .addComponent(jLabel11)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(cbTahun, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addGap(31, 31, 31)
+                                .addComponent(tfTempatLahir)))))
                 .addGap(14, 14, 14))
         );
         jPanel1Layout.setVerticalGroup(
@@ -210,7 +216,7 @@ public class ViewSignUp extends javax.swing.JFrame {
                     .addComponent(jLabel7)
                     .addComponent(tfTempatLahir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(btnSignUp)
                 .addGap(28, 28, 28))
         );
 
@@ -283,10 +289,10 @@ public class ViewSignUp extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup btnGroupJK;
     private javax.swing.ButtonGroup btnGroupTP;
+    private javax.swing.JButton btnSignUp;
     private javax.swing.JComboBox<String> cbBulan;
     private javax.swing.JComboBox<String> cbTahun;
     private javax.swing.JComboBox<String> cbTanggal;
-    private javax.swing.JButton jButton1;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -357,4 +363,55 @@ public class ViewSignUp extends javax.swing.JFrame {
         resetBtnGroupJK();
         resetBtnGroupTP();
     }
+
+    public char getJK() {
+        if(rdBtnLaki.isSelected()) return 'L';
+        else return 'P';
+    }
+
+    public char getTP() {
+        if(rdBtnAdmin.isSelected()) return 'A';
+        else return 'R';
+    }
+
+
+    public String getFullName() {
+        return tfFullName.getText();
+    }
+
+    public String getPassword() {
+        return tfPassword.getText();
+    }
+
+    public String getTempatLahir() {
+        return tfTempatLahir.getText();
+    }
+
+    public String getUsername() {
+        return tfUsername.getText();
+    }
+
+    public String getBulan() {
+        return cbBulan.getSelectedItem().toString();
+    }
+
+    public String getTahun() {
+        return cbTahun.getSelectedItem().toString();
+    }
+
+    public String getTanggal() {
+        return cbTanggal.getSelectedItem().toString();
+    }
+    
+    public Date getTglLahir(){
+        Date d = new Date(Integer.parseInt(getTanggal()), 
+                Integer.parseInt(getBulan()), Integer.parseInt(getTanggal()));
+        return d;
+    }
+    
+    public void setSignUpEvent(ActionListener act){
+        btnSignUp.addActionListener(act);
+    }
+    
+    
 }
