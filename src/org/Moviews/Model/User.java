@@ -4,8 +4,13 @@
  * and open the template in the editor.
  */
 package org.Moviews.Model;
-
+import org.Moviews.Database.Database;
 import java.sql.Date;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.Moviews.Database.Database;
 
 /**
  *
@@ -35,6 +40,9 @@ public class User {
         this.tipe = tipe;
         this.password = password;
         this.username = username;
+    }
+
+    public User() {
     }
 
     public String getId_user() {
@@ -92,8 +100,29 @@ public class User {
     public void setTempat_lahir(String tempat_lahir) {
         this.tempat_lahir = tempat_lahir;
     }
-
     
+    public boolean checkUser(String uname, String pass) throws SQLException{
+        boolean valid = false;
+        Database db = new Database();
+        db.Connect();
+        String query = "SELECT * FROM `user` WHERE `username` LIKE '"+uname+"'";
+        System.out.println(query);
+        db.setRs(query);
+        if (!db.getRs().isBeforeFirst()) {    
+            System.out.println("Username not found"); 
+        }else {
+            while(db.getRs().next()){
+                if(db.getRs().getString("password").equals(pass)){
+                    valid = true;
+                }else{
+                    System.out.println("Wrong Password");
+                }
+            }
+        } 
+        db.Disconnect();
+        return valid;
+    }
     
+ 
     
 }

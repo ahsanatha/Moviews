@@ -5,6 +5,10 @@
  */
 package org.Moviews.View;
 
+import java.awt.event.ActionListener;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 /**
  *
  * @author TSR
@@ -16,6 +20,7 @@ public class ViewSignIn extends javax.swing.JFrame {
      */
     public ViewSignIn() {
         initComponents();
+        
     }
 
     /**
@@ -66,9 +71,6 @@ public class ViewSignIn extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(179, 179, 179)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(74, 74, 74)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -83,15 +85,18 @@ public class ViewSignIn extends javax.swing.JFrame {
                             .addComponent(btnSignUp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(189, 189, 189)
-                        .addComponent(jLabel5)))
+                        .addComponent(jLabel5))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(178, 178, 178)
+                        .addComponent(jLabel2)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(23, 23, 23)
                 .addComponent(jLabel2)
-                .addGap(30, 30, 30)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tfUname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
@@ -180,4 +185,33 @@ public class ViewSignIn extends javax.swing.JFrame {
     private javax.swing.JPasswordField tfPass;
     private javax.swing.JTextField tfUname;
     // End of variables declaration//GEN-END:variables
+
+    public String getPass() {
+        return tfPass.getText();
+    }
+
+    public void setPass(String pass) {
+        this.tfPass.setText(pass);
+    }
+
+    public String getUname() {
+        return tfUname.getText();
+    }
+
+    public void setUname(String uname) {
+        this.tfUname.setText(uname);
+    }
+    
+    public void reset(){
+        setUname("");
+        setPass("");
+    }
+    
+    public void setSignInEvent(ActionListener act){
+        btnSignIn.addActionListener(act);
+    }
+    
+    public void setSignOutEvent(ActionListener act){
+        btnSignUp.addActionListener(act);
+    }
 }

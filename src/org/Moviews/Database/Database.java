@@ -26,14 +26,17 @@ public class Database {
     }
     
     public void Connect(){
+        System.out.println("Connecting..");
         try {
-            String url = "jdbc:mysql://localhost/praktikum";
+            String url = "jdbc:mysql://localhost/moviewsdb";
             String user = "root";
             String pass = "";
             this.conn = DriverManager.getConnection(url, user, pass);
             this.stmt = conn.createStatement();
+            System.out.println("Connected");
         } catch (SQLException ex) {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Connection Failed.");
         }
     }
     
@@ -41,8 +44,10 @@ public class Database {
         try {
             this.conn.close();
             this.stmt.close();
+            System.out.println("Disconnected.");
         } catch (SQLException ex) {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Disconnect failed");
         }
     }
     
@@ -56,23 +61,36 @@ public class Database {
         }
         return cek;
     }
-    public boolean checkUser(String uname, String pass){
-        boolean valid = false;
-        Connect();
-        String query = "SELECT * FROM User WHERE 'username' LIKE "+uname;
-        if(Manipulate(query)){
-            try {
-                this.rs = stmt.executeQuery(query);
-                if(rs.getString("password") == pass){
-                    valid = true;
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-        }
-        return valid;
+
+
+    public Connection getConn() {
+        return conn;
     }
+
+    public Statement getStmt() {
+        return stmt;
+    }
+
+    public ResultSet getRs() {
+        return rs;
+    }
+
+    public void setConn(Connection conn) {
+        this.conn = conn;
+    }
+
+    public void setStmt(Statement stmt) {
+        this.stmt = stmt;
+    }
+
+    public void setRs(String query) {
+        try {
+            this.rs = this.stmt.executeQuery(query);
+        } catch (SQLException ex) {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     
     
 }
