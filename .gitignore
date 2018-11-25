@@ -1,1 +1,5 @@
 /build/
+manifest.mf
+build.xml
+/test/
+/nbproject/
