@@ -91,6 +91,8 @@ public class Database {
         }
     }
     
-    
+    public boolean isRsEmpty(ResultSet rs) throws SQLException{
+        return !rs.isBeforeFirst();
+    }
     
 }

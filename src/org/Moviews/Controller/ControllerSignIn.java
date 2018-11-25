@@ -12,6 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.Moviews.Model.User;
 import org.Moviews.View.ViewSignIn;
+import org.Moviews.View.ViewSignUp;
 
 /**
  *
@@ -62,6 +63,8 @@ public class ControllerSignIn {
     }
     
     public void toSignUp(){
+       ControllerSignUp up = new ControllerSignUp(new ViewSignUp(), new User());
+       up.showView();
        view.dispose();
     }
     

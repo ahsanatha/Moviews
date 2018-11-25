@@ -11,7 +11,7 @@ public class Moviews {
     
 
     public static void main(String[] args) {
-        ControllerSignIn controller = new ControllerSignIn(new ViewSignIn(), new User());
-        controller.showView();
+        ControllerSignIn in = new ControllerSignIn(new ViewSignIn(), new User());
+        in.showView();
     }
 }
