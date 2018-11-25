@@ -24,4 +24,5 @@ public class ControllerSignUp {
     public void showView(){
         view.show();
     }
+    
 }

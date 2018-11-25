@@ -5,6 +5,8 @@
  */
 package org.Moviews.View;
 
+import javax.swing.ButtonGroup;
+
 /**
  *
  * @author TSR
@@ -357,4 +359,33 @@ public class ViewSignUp extends javax.swing.JFrame {
         resetBtnGroupJK();
         resetBtnGroupTP();
     }
+
+    public char getJK() {
+        if(rdBtnLaki.isSelected()) return 'L';
+        else return 'P';
+    }
+
+    public char getTP() {
+        if(rdBtnAdmin.isSelected()) return 'A';
+        else return 'U';
+    }
+
+
+    public String getTfFullName() {
+        return tfFullName.getText();
+    }
+
+    public String getTfPassword() {
+        return tfPassword.getText();
+    }
+
+    public String getTfTempatLahir() {
+        return tfTempatLahir.getText();
+    }
+
+    public String getTfUsername() {
+        return tfUsername.getText();
+    }
+    
+    
 }
