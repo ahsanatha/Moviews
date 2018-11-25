@@ -105,10 +105,20 @@ public class User {
         boolean valid = false;
         Database db = new Database();
         db.Connect();
-        String query = "SELECT password FROM user WHERE 'username' LIKE '"+uname+"'";
+        String query = "SELECT * FROM `user` WHERE `username` LIKE '"+uname+"'";
+        System.out.println(query);
         db.setRs(query);
-        System.out.println(db.getRs().getString("password"));
-        valid = true;
+        if (!db.getRs().isBeforeFirst()) {    
+            System.out.println("Username not found"); 
+        }else {
+            while(db.getRs().next()){
+                if(db.getRs().getString("password").equals(pass)){
+                    valid = true;
+                }else{
+                    System.out.println("Wrong Password");
+                }
+            }
+        } 
         db.Disconnect();
         return valid;
     }

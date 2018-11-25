@@ -24,6 +24,7 @@ public class ControllerSignIn {
     public ControllerSignIn(ViewSignIn view, User model) {
         this.view = view;
         this.model = model;
+        //atur sign in
         this.view.setSignInEvent(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -40,6 +41,14 @@ public class ControllerSignIn {
             }
             
         });
+        //atur sign up
+        this.view.setSignOutEvent(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                toSignUp();
+            }
+            
+        });
        
     }
 
@@ -52,8 +61,8 @@ public class ControllerSignIn {
         view.dispose();
     }
     
-    public void toRegister(){
-        view.dispose();
+    public void toSignUp(){
+       view.dispose();
     }
     
 }
