@@ -4,3 +4,4 @@ build.xml
 /test/
 /nbproject/
 nbproject/private/private.properties
+*.properties

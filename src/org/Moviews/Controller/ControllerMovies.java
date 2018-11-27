@@ -5,6 +5,8 @@
  */
 package org.Moviews.Controller;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import org.Moviews.Model.Movies;
 import org.Moviews.View.ViewMovieList;
@@ -23,9 +25,9 @@ public class ControllerMovies {
 
     }
     
-    public DefaultTableModel loadMovies(){
+    public DefaultTableModel loadMovies() throws SQLException{
         DefaultTableModel dtm = new DefaultTableModel();
-
+        ArrayList<Movies> arm = this.model.getAllMovies();
         return dtm;
     }
     
