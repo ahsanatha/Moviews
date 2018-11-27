@@ -43,6 +43,10 @@ public class Movies {
         this.title = title;
     }
 
+    public Movies() {
+        
+    }
+
     
     public String getId_mov() {
         return id_mov;

@@ -20,15 +20,17 @@ public class ControllerMovies {
     public ControllerMovies(ViewMovieList view, Movies model) {
         this.view = view;
         this.model = model;
-        
-        
+
     }
     
     public DefaultTableModel loadMovies(){
         DefaultTableModel dtm = new DefaultTableModel();
-        
-        
-        
+
         return dtm;
+    }
+    
+    public void ShowView(){
+        this.view.setLocationRelativeTo(null);
+        this.view.show();
     }
 }

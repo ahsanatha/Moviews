@@ -8,7 +8,9 @@ package org.Moviews.Controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import org.Moviews.Model.Home;
+import org.Moviews.Model.Movies;
 import org.Moviews.View.ViewHome;
+import org.Moviews.View.ViewMovieList;
 
 /**
  *
@@ -33,7 +35,9 @@ public class ControllerHome {
     }
     
     public void toMovie(){
-        
+        ControllerMovies mov = new ControllerMovies(new ViewMovieList(), new Movies());
+        mov.ShowView();
+        this.view.dispose();
     }
     
     public void showView(){
