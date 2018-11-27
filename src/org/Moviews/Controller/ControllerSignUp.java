@@ -36,6 +36,7 @@ public class ControllerSignUp {
                 u.setPassword(view.getPassword());
                 u.setTgl_lahir(view.getTglLahir());
                 u.setTempat_lahir(view.getTempatLahir());
+                u.setTipe(view.getTP());
                 try {
                     model.addUser(u);
                 } catch (SQLException ex) {
@@ -43,11 +44,18 @@ public class ControllerSignUp {
                 }
                 toSignIn();
             }
-            
+        });
+        
+        this.view.setCancelEvent(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                toSignIn();
+            }
         });
     }
     
     public void showView(){
+        view.setLocationRelativeTo(null);
         view.show();
     }
     
