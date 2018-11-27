@@ -65,6 +65,7 @@ public class ControllerSignIn {
         ControllerHome home = new ControllerHome(new ViewHome(), new Home());
         home.showView();
         view.dispose();
+
     }
     
     public void toSignUp(){

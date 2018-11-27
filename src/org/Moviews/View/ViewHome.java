@@ -6,6 +6,10 @@
 package org.Moviews.View;
 
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /**
  *
@@ -18,6 +22,7 @@ public class ViewHome extends javax.swing.JFrame {
      */
     public ViewHome() {
         initComponents();
+        
     }
 
     /**
@@ -62,6 +67,11 @@ public class ViewHome extends javax.swing.JFrame {
         btnCast.setText("Cast");
 
         tfSearch.setText("Search movies, cast, crew, genre ");
+        tfSearch.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tfSearchMouseClicked(evt);
+            }
+        });
         tfSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfSearchActionPerformed(evt);
@@ -129,6 +139,10 @@ public class ViewHome extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSearchActionPerformed
 
+    private void tfSearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tfSearchMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfSearchMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -178,4 +192,14 @@ public class ViewHome extends javax.swing.JFrame {
     public void setMoviesEvent(ActionListener act){
         btnMovies.addActionListener(act);
     }
+    
+    public void setSearchBox(){
+        tfSearch.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e){
+                tfSearch.setText("");
+            }
+        });
+    }
+    
 }

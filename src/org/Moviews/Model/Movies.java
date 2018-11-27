@@ -158,4 +158,9 @@ public class Movies {
         return arm;        
     }
     
+    public void addMovies(){
+        Database db = new Database();
+        db.Connect();
+//        String qu
+    }
 }

@@ -7,6 +7,10 @@ package org.Moviews.Controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.Moviews.Model.Home;
 import org.Moviews.Model.Movies;
 import org.Moviews.View.ViewHome;
@@ -28,13 +32,18 @@ public class ControllerHome {
         this.view.setMoviesEvent(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                toMovie();
+                try {
+                    toMovie();
+                } catch (SQLException ex) {
+                    Logger.getLogger(ControllerHome.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
             
         });
+        this.view.setSearchBox();
     }
     
-    public void toMovie(){
+    public void toMovie() throws SQLException{
         ControllerMovies mov = new ControllerMovies(new ViewMovieList(), new Movies());
         mov.ShowView();
         this.view.dispose();
@@ -44,4 +53,6 @@ public class ControllerHome {
         this.view.setLocationRelativeTo(null);
         this.view.show();
     }
+    
+    
 }

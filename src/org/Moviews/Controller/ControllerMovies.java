@@ -19,16 +19,19 @@ public class ControllerMovies {
     private ViewMovieList view;
     private Movies model;
 
-    public ControllerMovies(ViewMovieList view, Movies model) {
+    public ControllerMovies(ViewMovieList view, Movies model) throws SQLException {
         this.view = view;
         this.model = model;
-
+        loadMovies();
     }
     
-    public DefaultTableModel loadMovies() throws SQLException{
-        DefaultTableModel dtm = new DefaultTableModel();
+    public void loadMovies() throws SQLException{
+        DefaultTableModel dtm = new DefaultTableModel(new String[]{"ID","Judul","Rating","Tanggal Rilis","Durasi(menit)","Sutradara","Sinopsis"},0);
         ArrayList<Movies> arm = this.model.getAllMovies();
-        return dtm;
+        for (Movies m : arm){
+            dtm.addRow(new Object[]{m.getId_mov(),m.getTitle(),m.getRatingfilm(),m.getRelease(),m.getDuration(),m.getDirector(),m.getSinopsis()});
+        }
+        this.view.setMovies(dtm);
     }
     
     public void ShowView(){

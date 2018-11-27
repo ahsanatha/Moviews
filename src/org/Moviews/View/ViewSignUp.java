@@ -424,4 +424,5 @@ public class ViewSignUp extends javax.swing.JFrame {
     public void setCancelEvent(ActionListener act){
         btnCancel.addActionListener(act);
     }
+   
 }
