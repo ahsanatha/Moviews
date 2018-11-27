@@ -5,10 +5,15 @@
  */
 package org.Moviews.Controller;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 import org.Moviews.Model.Movies;
+import org.Moviews.View.ViewAddMovie;
 import org.Moviews.View.ViewMovieList;
 
 /**
@@ -23,6 +28,13 @@ public class ControllerMovies {
         this.view = view;
         this.model = model;
         loadMovies();
+        
+        this.view.setAddEvent(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                toAddMovie();
+            }
+        });
     }
     
     public void loadMovies() throws SQLException{
@@ -37,5 +49,10 @@ public class ControllerMovies {
     public void ShowView(){
         this.view.setLocationRelativeTo(null);
         this.view.show();
+    }
+    
+    public void toAddMovie(){
+        ControllerAddMovie am = new ControllerAddMovie(new ViewAddMovie(), new Movies());
+        am.showView();
     }
 }

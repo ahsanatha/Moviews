@@ -52,6 +52,11 @@ public class ControllerSignUp {
                 toSignIn();
             }
         });
+        
+        System.out.println(this.view.getTanggal());
+        System.out.println(this.view.getBulan());
+        System.out.println(this.view.getTahun());
+        System.out.println(this.view.getTglLahir());
     }
     
     public void showView(){

@@ -158,9 +158,24 @@ public class Movies {
         return arm;        
     }
     
-    public void addMovies(){
+    public void addMovies(Movies m){
         Database db = new Database();
         db.Connect();
-//        String qu
+        String query = "INSERT INTO `movies` VALUES('";
+        query += m.getId_mov()+"','";
+        query += m.getTitle()+"','";
+        query += m.getSinopsis()+"','";
+        query += m.getRelease()+"','";
+        query += m.getDuration()+"','";
+        query += m.getDirector()+"','";
+        query += m.getStudio()+"','";
+        query += m.getRatingfilm()+"'";
+        System.out.println(query);
+        if(db.Manipulate(query)){
+            System.out.println("Data berhasil di tambahkan ke database!");
+        }else {
+            System.out.println("Data gagak di tambahkan ke database.");
+        }
+        db.Disconnect();
     }
 }

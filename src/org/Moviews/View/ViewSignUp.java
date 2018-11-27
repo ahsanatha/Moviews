@@ -106,6 +106,11 @@ public class ViewSignUp extends javax.swing.JFrame {
         jLabel8.setText("Tanggal Lahir");
 
         cbTanggal.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        cbTanggal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbTanggalActionPerformed(evt);
+            }
+        });
 
         cbBulan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", " " }));
 
@@ -257,6 +262,10 @@ public class ViewSignUp extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbTahunActionPerformed
 
+    private void cbTanggalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbTanggalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbTanggalActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -399,21 +408,21 @@ public class ViewSignUp extends javax.swing.JFrame {
         return tfUsername.getText();
     }
 
-    public String getBulan() {
-        return cbBulan.getSelectedItem().toString();
+    public int getBulan() {
+        return Integer.valueOf(cbBulan.getItemAt(cbBulan.getSelectedIndex()));
     }
 
-    public String getTahun() {
-        return cbTahun.getSelectedItem().toString();
+    public int getTahun() {
+        return Integer.valueOf(cbTahun.getItemAt(cbTahun.getSelectedIndex()));
     }
 
-    public String getTanggal() {
-        return cbTanggal.getSelectedItem().toString();
+    public int getTanggal() {
+        return Integer.valueOf(cbTanggal.getItemAt(cbTanggal.getSelectedIndex()));
     }
     
     public Date getTglLahir(){
-        Date d = new Date(Integer.parseInt(getTanggal()), 
-                Integer.parseInt(getBulan()), Integer.parseInt(getTanggal()));
+        
+        Date d = new Date(getTahun(), getBulan(), getTanggal());
         return d;
     }
     
@@ -424,5 +433,8 @@ public class ViewSignUp extends javax.swing.JFrame {
     public void setCancelEvent(ActionListener act){
         btnCancel.addActionListener(act);
     }
-   
+
+
+    
+    
 }

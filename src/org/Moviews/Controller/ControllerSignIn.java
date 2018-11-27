@@ -20,7 +20,7 @@ import org.Moviews.View.ViewSignUp;
  *
  * @author TSR
  */
-public class ControllerSignIn {
+public class ControllerSignIn{
     private ViewSignIn view;
     private User model;
 
