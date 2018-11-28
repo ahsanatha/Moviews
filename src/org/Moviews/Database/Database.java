@@ -26,7 +26,7 @@ public class Database {
     }
     
     public void Connect(){
-        System.out.println("Connecting..");
+        //System.out.println("Connecting..");
         try {
             String url = "jdbc:mysql://localhost/moviewsdb";
             String user = "root";
