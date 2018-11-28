@@ -5,6 +5,11 @@
  */
 package org.Moviews.View;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+
 /**
  *
  * @author TSR
@@ -173,4 +178,62 @@ public class CastList extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblCastList;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnCast() {
+        return btnCast;
+    }
+
+    public void setBtnCast(JButton btnCast) {
+        this.btnCast = btnCast;
+    }
+
+    public JButton getBtnGenre() {
+        return btnGenre;
+    }
+
+    public void setBtnGenre(JButton btnGenre) {
+        this.btnGenre = btnGenre;
+    }
+
+    public JButton getBtnMovies() {
+        return btnMovies;
+    }
+
+    public void setBtnMovies(JButton btnMovies) {
+        this.btnMovies = btnMovies;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JTable getTblCastList() {
+        return tblCastList;
+    }
+
+    public void setTblCastList(JTable tblCastList) {
+        this.tblCastList = tblCastList;
+    }
+
+ 
 }

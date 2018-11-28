@@ -5,6 +5,13 @@
  */
 package org.Moviews.View;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
 /**
  *
  * @author GL553-VD
@@ -259,4 +266,142 @@ public class ProfilePage extends javax.swing.JFrame {
     private javax.swing.JTable tblWatched;
     private javax.swing.JTextField tfSearch;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnCast() {
+        return btnCast;
+    }
+
+    public void setBtnCast(JButton btnCast) {
+        this.btnCast = btnCast;
+    }
+
+    public JButton getBtnGenre() {
+        return btnGenre;
+    }
+
+    public void setBtnGenre(JButton btnGenre) {
+        this.btnGenre = btnGenre;
+    }
+
+    public JButton getBtnMovies() {
+        return btnMovies;
+    }
+
+    public void setBtnMovies(JButton btnMovies) {
+        this.btnMovies = btnMovies;
+    }
+
+    public JButton getBtnSearch() {
+        return btnSearch;
+    }
+
+    public void setBtnSearch(JButton btnSearch) {
+        this.btnSearch = btnSearch;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JScrollPane getjScrollPane2() {
+        return jScrollPane2;
+    }
+
+    public void setjScrollPane2(JScrollPane jScrollPane2) {
+        this.jScrollPane2 = jScrollPane2;
+    }
+
+    public JTable getTblRecomended() {
+        return tblRecomended;
+    }
+
+    public void setTblRecomended(JTable tblRecomended) {
+        this.tblRecomended = tblRecomended;
+    }
+
+    public JTable getTblWatched() {
+        return tblWatched;
+    }
+
+    public void setTblWatched(JTable tblWatched) {
+        this.tblWatched = tblWatched;
+    }
+
+    public JTextField getTfSearch() {
+        return tfSearch;
+    }
+
+    public void setTfSearch(JTextField tfSearch) {
+        this.tfSearch = tfSearch;
+    }
+
+    
 }

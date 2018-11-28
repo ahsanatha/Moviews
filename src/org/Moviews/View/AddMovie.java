@@ -5,6 +5,10 @@
  */
 package org.Moviews.View;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
 /**
  *
  * @author GL553-VD
@@ -254,4 +258,150 @@ public class AddMovie extends javax.swing.JFrame {
     private javax.swing.JTextField tfSynopsis;
     private javax.swing.JTextField tfTitle;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnAddMo() {
+        return btnAddMo;
+    }
+
+    public void setBtnAddMo(JButton btnAddMo) {
+        this.btnAddMo = btnAddMo;
+    }
+
+    public JButton getBtnGenre() {
+        return btnGenre;
+    }
+
+    public void setBtnGenre(JButton btnGenre) {
+        this.btnGenre = btnGenre;
+    }
+
+    public JButton getBtnMovies() {
+        return btnMovies;
+    }
+
+    public void setBtnMovies(JButton btnMovies) {
+        this.btnMovies = btnMovies;
+    }
+
+    public JButton getBtnSearch() {
+        return btnSearch;
+    }
+
+    public void setBtnSearch(JButton btnSearch) {
+        this.btnSearch = btnSearch;
+    }
+
+    public JButton getjButton2() {
+        return jButton2;
+    }
+
+    public void setjButton2(JButton jButton2) {
+        this.jButton2 = jButton2;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public JTextField getTfCast() {
+        return tfCast;
+    }
+
+    public void setTfCast(JTextField tfCast) {
+        this.tfCast = tfCast;
+    }
+
+    public JTextField getTfGenre() {
+        return tfGenre;
+    }
+
+    public void setTfGenre(JTextField tfGenre) {
+        this.tfGenre = tfGenre;
+    }
+
+    public JTextField getTfSearch() {
+        return tfSearch;
+    }
+
+    public void setTfSearch(JTextField tfSearch) {
+        this.tfSearch = tfSearch;
+    }
+
+    public JTextField getTfStudio() {
+        return tfStudio;
+    }
+
+    public void setTfStudio(JTextField tfStudio) {
+        this.tfStudio = tfStudio;
+    }
+
+    public JTextField getTfSynopsis() {
+        return tfSynopsis;
+    }
+
+    public void setTfSynopsis(JTextField tfSynopsis) {
+        this.tfSynopsis = tfSynopsis;
+    }
+
+    public JTextField getTfTitle() {
+        return tfTitle;
+    }
+
+    public void setTfTitle(JTextField tfTitle) {
+        this.tfTitle = tfTitle;
+    }
+
+    
 }

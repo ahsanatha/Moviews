@@ -5,6 +5,10 @@
  */
 package org.Moviews.View;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
 /**
  *
  * @author GL553-VD
@@ -250,4 +254,158 @@ public class GenreList extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField tfSearch;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnAction() {
+        return btnAction;
+    }
+
+    public void setBtnAction(JButton btnAction) {
+        this.btnAction = btnAction;
+    }
+
+    public JButton getBtnAdventure() {
+        return btnAdventure;
+    }
+
+    public void setBtnAdventure(JButton btnAdventure) {
+        this.btnAdventure = btnAdventure;
+    }
+
+    public JButton getBtnAnimation() {
+        return btnAnimation;
+    }
+
+    public void setBtnAnimation(JButton btnAnimation) {
+        this.btnAnimation = btnAnimation;
+    }
+
+    public JButton getBtnCast() {
+        return btnCast;
+    }
+
+    public void setBtnCast(JButton btnCast) {
+        this.btnCast = btnCast;
+    }
+
+    public JButton getBtnComedy() {
+        return btnComedy;
+    }
+
+    public void setBtnComedy(JButton btnComedy) {
+        this.btnComedy = btnComedy;
+    }
+
+    public JButton getBtnDrama() {
+        return btnDrama;
+    }
+
+    public void setBtnDrama(JButton btnDrama) {
+        this.btnDrama = btnDrama;
+    }
+
+    public JButton getBtnFantasy() {
+        return btnFantasy;
+    }
+
+    public void setBtnFantasy(JButton btnFantasy) {
+        this.btnFantasy = btnFantasy;
+    }
+
+    public JButton getBtnGenre() {
+        return btnGenre;
+    }
+
+    public void setBtnGenre(JButton btnGenre) {
+        this.btnGenre = btnGenre;
+    }
+
+    public JButton getBtnHistory() {
+        return btnHistory;
+    }
+
+    public void setBtnHistory(JButton btnHistory) {
+        this.btnHistory = btnHistory;
+    }
+
+    public JButton getBtnHorror() {
+        return btnHorror;
+    }
+
+    public void setBtnHorror(JButton btnHorror) {
+        this.btnHorror = btnHorror;
+    }
+
+    public JButton getBtnMovies() {
+        return btnMovies;
+    }
+
+    public void setBtnMovies(JButton btnMovies) {
+        this.btnMovies = btnMovies;
+    }
+
+    public JButton getBtnMystery() {
+        return btnMystery;
+    }
+
+    public void setBtnMystery(JButton btnMystery) {
+        this.btnMystery = btnMystery;
+    }
+
+    public JButton getBtnScifi() {
+        return btnScifi;
+    }
+
+    public void setBtnScifi(JButton btnScifi) {
+        this.btnScifi = btnScifi;
+    }
+
+    public JButton getBtnSearch() {
+        return btnSearch;
+    }
+
+    public void setBtnSearch(JButton btnSearch) {
+        this.btnSearch = btnSearch;
+    }
+
+    public JButton getBtnSport() {
+        return btnSport;
+    }
+
+    public void setBtnSport(JButton btnSport) {
+        this.btnSport = btnSport;
+    }
+
+    public JButton getBtnThriller() {
+        return btnThriller;
+    }
+
+    public void setBtnThriller(JButton btnThriller) {
+        this.btnThriller = btnThriller;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JTextField getTfSearch() {
+        return tfSearch;
+    }
+
+    public void setTfSearch(JTextField tfSearch) {
+        this.tfSearch = tfSearch;
+    }
+
+    
 }

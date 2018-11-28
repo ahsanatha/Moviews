@@ -5,6 +5,13 @@
  */
 package org.Moviews.View;
 
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+
 /**
  *
  * @author GL553-VD
@@ -273,4 +280,190 @@ rdBtnLaki args the command line arguments
     private javax.swing.JRadioButton rdbtnPermpuan;
     private javax.swing.JTextField tfSearch;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnCast() {
+        return btnCast;
+    }
+
+    public void setBtnCast(JButton btnCast) {
+        this.btnCast = btnCast;
+    }
+
+    public JButton getBtnGenre() {
+        return btnGenre;
+    }
+
+    public void setBtnGenre(JButton btnGenre) {
+        this.btnGenre = btnGenre;
+    }
+
+    public ButtonGroup getBtnGroupJK() {
+        return btnGroupJK;
+    }
+
+    public void setBtnGroupJK(ButtonGroup btnGroupJK) {
+        this.btnGroupJK = btnGroupJK;
+    }
+
+    public JButton getBtnMovies() {
+        return btnMovies;
+    }
+
+    public void setBtnMovies(JButton btnMovies) {
+        this.btnMovies = btnMovies;
+    }
+
+    public JButton getBtnSearch() {
+        return btnSearch;
+    }
+
+    public void setBtnSearch(JButton btnSearch) {
+        this.btnSearch = btnSearch;
+    }
+
+    public JComboBox<String> getCbBulan() {
+        return cbBulan;
+    }
+
+    public void setCbBulan(JComboBox<String> cbBulan) {
+        this.cbBulan = cbBulan;
+    }
+
+    public JComboBox<String> getCbTahun() {
+        return cbTahun;
+    }
+
+    public void setCbTahun(JComboBox<String> cbTahun) {
+        this.cbTahun = cbTahun;
+    }
+
+    public JComboBox<String> getCbtanggal() {
+        return cbtanggal;
+    }
+
+    public void setCbtanggal(JComboBox<String> cbtanggal) {
+        this.cbtanggal = cbtanggal;
+    }
+
+    public JButton getjButton5() {
+        return jButton5;
+    }
+
+    public void setjButton5(JButton jButton5) {
+        this.jButton5 = jButton5;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return jLabel3;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.jLabel3 = jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public JLabel getjLabel8() {
+        return jLabel8;
+    }
+
+    public void setjLabel8(JLabel jLabel8) {
+        this.jLabel8 = jLabel8;
+    }
+
+    public JLabel getjLabel9() {
+        return jLabel9;
+    }
+
+    public void setjLabel9(JLabel jLabel9) {
+        this.jLabel9 = jLabel9;
+    }
+
+    public JTextField getjTextField2() {
+        return jTextField2;
+    }
+
+    public void setjTextField2(JTextField jTextField2) {
+        this.jTextField2 = jTextField2;
+    }
+
+    public JTextField getjTextField7() {
+        return jTextField7;
+    }
+
+    public void setjTextField7(JTextField jTextField7) {
+        this.jTextField7 = jTextField7;
+    }
+
+    public JRadioButton getRdBtnLaki() {
+        return rdBtnLaki;
+    }
+
+    public void setRdBtnLaki(JRadioButton rdBtnLaki) {
+        this.rdBtnLaki = rdBtnLaki;
+    }
+
+    public JRadioButton getRdbtnPermpuan() {
+        return rdbtnPermpuan;
+    }
+
+    public void setRdbtnPermpuan(JRadioButton rdbtnPermpuan) {
+        this.rdbtnPermpuan = rdbtnPermpuan;
+    }
+
+    public JTextField getTfSearch() {
+        return tfSearch;
+    }
+
+    public void setTfSearch(JTextField tfSearch) {
+        this.tfSearch = tfSearch;
+    }
+
+    
 }
