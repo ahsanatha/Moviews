@@ -8,6 +8,7 @@ package org.Moviews.View;
 import java.awt.event.ActionListener;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import org.Moviews.Model.Movies;
 
 /**
  *
@@ -198,8 +199,9 @@ public class ViewMovieList extends javax.swing.JFrame {
         this.tMovies.setModel(dtm);
     }
 
-    public int getSelectedMovies(){
-        return this.tMovies.getSelectedRow();
+    public String getSelectedMovies(){
+        int row = this.tMovies.getSelectedRow();
+        return (String) this.tMovies.getValueAt(row, 0);
     }
     
     public void setRefreshEvent(ActionListener act){

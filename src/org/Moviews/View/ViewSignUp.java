@@ -422,6 +422,7 @@ public class ViewSignUp extends javax.swing.JFrame {
         return cbTanggal.getItemAt(cbTanggal.getSelectedIndex());
     }
     
+    
     public Date getTglLahir() throws ParseException{
         String startDate=getTanggal()+"-"+getBulan()+"-"+getTahun();
         SimpleDateFormat sdf1 = new SimpleDateFormat("dd-MM-yyyy");

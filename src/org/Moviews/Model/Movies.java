@@ -169,7 +169,7 @@ public class Movies {
         query += m.getDuration()+"','";
         query += m.getDirector()+"','";
         query += m.getStudio()+"','";
-        query += m.getRatingfilm()+"'";
+        query += m.getRatingfilm()+"')";
         System.out.println(query);
         if(db.Manipulate(query)){
             System.out.println("Data berhasil di tambahkan ke database!");
@@ -177,5 +177,53 @@ public class Movies {
             System.out.println("Data gagal di tambahkan ke database.");
         }
         db.Disconnect();
+    }
+
+    public void updateMovies(Movies m) {
+        Database db = new Database();
+        db.Connect();
+        String query = "UPDATE `movies` SET ";
+        query += "`title`= '"+m.getTitle()+"',";
+        query += "`sinopsis`= '"+m.getSinopsis()+"',";
+        query += "`release`= '"+m.getRelease()+"',";
+        query += "`duration`= "+m.getDuration()+",";
+        query += "`director`= '"+m.getDirector()+"',";
+        query += "`studio`= '"+m.getStudio()+"',";
+        query += "`ratingfilm`= "+m.getRatingfilm()+"";
+        query += " WHERE `id_mov` = '"+m.getId_mov()+"';";
+        System.out.println(query);
+        if(db.Manipulate(query)){
+            System.out.println("Data berhasil di update ke database!");
+        }else {
+            System.out.println("Data gagal di update ke database.");
+        }
+        db.Disconnect();
+    }
+
+    public Movies find(String id) throws SQLException {
+        Movies m = null;
+        Database db = new Database();
+        db.Connect();
+        String query = "SELECT * FROM `movies` WHERE `id_mov` = '"+id+"';";
+        System.out.println(query);
+        db.setRs(query);
+        ResultSet rs = db.getRs();
+        if(!db.isRsEmpty(rs)){
+            while(rs.next()){
+                m = new Movies(
+                        "MOV"+getCurrentId(),
+                        rs.getString("title"),
+                        rs.getString("sinopsis"),
+                        rs.getDate("release"),
+                        rs.getInt("duration"),
+                        rs.getString("director"),
+                        rs.getString("studio"),
+                        rs.getDouble("ratingfilm")
+                );
+            }
+        }else{
+            System.out.println("ID tidak di temukan di database!");
+        }
+        return m;
     }
 }

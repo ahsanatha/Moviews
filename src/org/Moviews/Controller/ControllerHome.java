@@ -44,7 +44,7 @@ public class ControllerHome {
     }
     
     public void toMovie() throws SQLException{
-        ControllerMovies mov = new ControllerMovies(new ViewMovieList(), new Movies());
+        ControllerMovieList mov = new ControllerMovieList(new ViewMovieList(), new Movies());
         mov.ShowView();
         this.view.dispose();
     }
