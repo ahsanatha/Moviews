@@ -40,11 +40,31 @@ public class ControllerMovieList {
             }
         });
         
+        this.view.setDeleteEvent(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DeleteMovie();
+                try {
+                    loadMovies();
+                } catch (SQLException ex) {
+                    Logger.getLogger(ControllerMovieList.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
+        
         this.view.setEditEvent(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    toEditMovie(getMovieSelectedInfo());
+                    if(getMovieSelectedInfo() != null){
+                        try {
+                            toEditMovie(getMovieSelectedInfo());
+                        } catch (SQLException ex) {
+                            Logger.getLogger(ControllerMovieList.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }else{
+                        System.out.println("Tidak ada baris yang dipilih");
+                    }
                 } catch (SQLException ex) {
                     Logger.getLogger(ControllerMovieList.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -107,5 +127,13 @@ public class ControllerMovieList {
         String id = this.view.getSelectedMovies();
         Movies m = this.model.find(id);
         return m;
+    }
+    
+    public void DeleteMovie(){
+        this.model.Delete(this.view.getSelectedMovies());
+    }
+    
+    public void openMov(){
+        
     }
 }

@@ -44,6 +44,7 @@ public class ViewMovieList extends javax.swing.JFrame {
         btnEdit = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         btnRefresh = new javax.swing.JButton();
+        btnOpenMov = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,7 +72,6 @@ public class ViewMovieList extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        tMovies.setRowSelectionAllowed(true);
         jScrollPane1.setViewportView(tMovies);
 
         btnAdd.setText("Add");
@@ -81,6 +81,8 @@ public class ViewMovieList extends javax.swing.JFrame {
         btnDelete.setText("Delete");
 
         btnRefresh.setText("Refresh");
+
+        btnOpenMov.setText("Open");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -106,6 +108,8 @@ public class ViewMovieList extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnOpenMov)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnRefresh)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnAdd)
@@ -134,7 +138,8 @@ public class ViewMovieList extends javax.swing.JFrame {
                     .addComponent(btnAdd)
                     .addComponent(btnEdit)
                     .addComponent(btnDelete)
-                    .addComponent(btnRefresh))
+                    .addComponent(btnRefresh)
+                    .addComponent(btnOpenMov))
                 .addContainerGap())
         );
 
@@ -183,6 +188,7 @@ public class ViewMovieList extends javax.swing.JFrame {
     private javax.swing.JButton btnEdit;
     private javax.swing.JButton btnGenre;
     private javax.swing.JButton btnMovies;
+    private javax.swing.JButton btnOpenMov;
     private javax.swing.JButton btnRefresh;
     private javax.swing.JButton btnSearch;
     private javax.swing.JLabel jLabel1;
@@ -200,8 +206,12 @@ public class ViewMovieList extends javax.swing.JFrame {
     }
 
     public String getSelectedMovies(){
+        String sel = null;
         int row = this.tMovies.getSelectedRow();
-        return (String) this.tMovies.getValueAt(row, 0);
+        if(row != -1){
+            sel = (String) this.tMovies.getValueAt(row, 0);            
+        }
+        return sel;
     }
     
     public void setRefreshEvent(ActionListener act){
@@ -220,5 +230,8 @@ public class ViewMovieList extends javax.swing.JFrame {
         btnDelete.addActionListener(act);
     }
     
+    public void setOpenMovEvent(ActionListener act){
+        btnOpenMov.addActionListener(act);
+    }
 
 }

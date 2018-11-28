@@ -117,12 +117,12 @@ public class Movies {
         String query = "SELECT COUNT(id_mov) FROM `movies`";
         Database db = new Database();
         db.Connect();
-        System.out.println(query);
+        //System.out.println(query);
         db.setRs(query);
         if(!db.isRsEmpty(db.getRs())){
             while(db.getRs().next()){
                 this.JMov = db.getRs().getInt("COUNT(id_mov)");
-                System.out.println("Banyak user : "+this.JMov);
+                //System.out.println("Banyak user : "+this.JMov);
                 x = this.JMov;
             }
         }
@@ -141,7 +141,7 @@ public class Movies {
             ResultSet rs = db.getRs();
             while(db.getRs().next()){
                 Movies m = new Movies(
-                        "MOV"+getCurrentId(),
+                        rs.getString("id_mov"),
                         rs.getString("title"),
                         rs.getString("sinopsis"),
                         rs.getDate("release"),
@@ -225,5 +225,17 @@ public class Movies {
             System.out.println("ID tidak di temukan di database!");
         }
         return m;
+    }
+    
+    public void Delete(String id){
+        Database db = new Database();
+        db.Connect();
+        String query = "DELETE FROM `movies` WHERE  `id_mov`='"+id+"';";
+        System.out.println(query);
+        if(!db.Manipulate(query)){
+            System.out.println("Data "+id+"telah di hapus.");
+        }else{
+            System.out.println("Data gagal di hapus.");
+        }
     }
 }
