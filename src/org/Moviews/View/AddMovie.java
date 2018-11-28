@@ -50,9 +50,9 @@ public class AddMovie extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/Moviews/img/MOVIEWS(2).png"))); // NOI18N
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Genre");
 
-        jButton2.setText("jButton1");
+        jButton2.setText("Cast");
 
         jButton3.setText("Movies");
 
@@ -174,8 +174,8 @@ public class AddMovie extends javax.swing.JFrame {
                     .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addGap(34, 34, 34)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addComponent(jButton5)
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         pack();
