@@ -5,6 +5,7 @@
  */
 package org.Moviews.Controller;
 
+import org.Moviews.Model.Movies;
 import org.Moviews.View.ViewMoviePage;
 
 /**
@@ -13,5 +14,5 @@ import org.Moviews.View.ViewMoviePage;
  */
 public class ControllerMoviePage {
     private ViewMoviePage view;
-    private 
+    private Movies model;
 }
