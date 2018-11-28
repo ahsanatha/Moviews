@@ -97,6 +97,10 @@ public class User {
     public void setTempat_lahir(String tempat_lahir) {
         this.tempat_lahir = tempat_lahir;
     }
+
+    public void setTipe(char tipe) {
+        this.tipe = tipe;
+    }
     
     
     

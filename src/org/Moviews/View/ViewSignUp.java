@@ -59,6 +59,7 @@ public class ViewSignUp extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         cbTahun = new javax.swing.JComboBox<>();
+        btnCancel = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
@@ -121,6 +122,8 @@ public class ViewSignUp extends javax.swing.JFrame {
             }
         });
 
+        btnCancel.setText("Cancel");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -129,6 +132,8 @@ public class ViewSignUp extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCancel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnSignUp))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
@@ -216,7 +221,9 @@ public class ViewSignUp extends javax.swing.JFrame {
                     .addComponent(jLabel7)
                     .addComponent(tfTempatLahir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addComponent(btnSignUp)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSignUp)
+                    .addComponent(btnCancel))
                 .addGap(28, 28, 28))
         );
 
@@ -287,6 +294,7 @@ public class ViewSignUp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancel;
     private javax.swing.ButtonGroup btnGroupJK;
     private javax.swing.ButtonGroup btnGroupTP;
     private javax.swing.JButton btnSignUp;
@@ -412,6 +420,8 @@ public class ViewSignUp extends javax.swing.JFrame {
     public void setSignUpEvent(ActionListener act){
         btnSignUp.addActionListener(act);
     }
-    
-    
+
+    public void setCancelEvent(ActionListener act){
+        btnCancel.addActionListener(act);
+    }
 }

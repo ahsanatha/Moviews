@@ -5,6 +5,8 @@
  */
 package org.Moviews.View;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author TSR
@@ -120,7 +122,7 @@ public class ViewHome extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMoviesActionPerformed
 
     private void tfSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfSearchActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_tfSearchActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
@@ -172,4 +174,8 @@ public class ViewHome extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField tfSearch;
     // End of variables declaration//GEN-END:variables
+
+    public void setMoviesEvent(ActionListener act){
+        btnMovies.addActionListener(act);
+    }
 }

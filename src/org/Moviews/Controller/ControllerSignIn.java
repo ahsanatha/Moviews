@@ -10,7 +10,9 @@ import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.Moviews.Model.Home;
 import org.Moviews.Model.User;
+import org.Moviews.View.ViewHome;
 import org.Moviews.View.ViewSignIn;
 import org.Moviews.View.ViewSignUp;
 
@@ -55,10 +57,13 @@ public class ControllerSignIn {
 
     
     public void showView(){
-        view.show();
+        this.view.setLocationRelativeTo(null);
+        this.view.show();
     }
     
     public void toHome(){
+        ControllerHome home = new ControllerHome(new ViewHome(), new Home());
+        home.showView();
         view.dispose();
     }
     
@@ -67,5 +72,7 @@ public class ControllerSignIn {
        up.showView();
        view.dispose();
     }
+
+
     
 }
