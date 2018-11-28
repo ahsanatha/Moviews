@@ -8,6 +8,8 @@ package org.Moviews.View;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import javax.swing.ButtonGroup;
 import javax.swing.JComboBox;
 
@@ -57,8 +59,8 @@ public class ViewSignUp extends javax.swing.JFrame {
         cbBulan = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         cbTahun = new javax.swing.JComboBox<>();
+        jLabel11 = new javax.swing.JLabel();
         btnCancel = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -118,14 +120,14 @@ public class ViewSignUp extends javax.swing.JFrame {
 
         jLabel10.setText("Bulan : ");
 
-        jLabel11.setText("Tahun : ");
-
-        cbTahun.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "20181990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018" }));
+        cbTahun.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1988", "1989", "1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018" }));
         cbTahun.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbTahunActionPerformed(evt);
             }
         });
+
+        jLabel11.setText("Tahun : ");
 
         btnCancel.setText("Cancel");
 
@@ -179,7 +181,7 @@ public class ViewSignUp extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jLabel11)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cbTahun, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(cbTahun, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel7)
@@ -243,7 +245,7 @@ public class ViewSignUp extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -408,21 +410,23 @@ public class ViewSignUp extends javax.swing.JFrame {
         return tfUsername.getText();
     }
 
-    public int getBulan() {
-        return Integer.valueOf(cbBulan.getItemAt(cbBulan.getSelectedIndex()));
+    public String getBulan() {
+        return cbBulan.getItemAt(cbBulan.getSelectedIndex());
     }
 
-    public int getTahun() {
-        return Integer.valueOf(cbTahun.getItemAt(cbTahun.getSelectedIndex()));
+    public String getTahun() {
+        return cbTahun.getItemAt(cbTahun.getSelectedIndex());
     }
 
-    public int getTanggal() {
-        return Integer.valueOf(cbTanggal.getItemAt(cbTanggal.getSelectedIndex()));
+    public String getTanggal() {
+        return cbTanggal.getItemAt(cbTanggal.getSelectedIndex());
     }
     
-    public Date getTglLahir(){
-        
-        Date d = new Date(getTahun(), getBulan(), getTanggal());
+    public Date getTglLahir() throws ParseException{
+        String startDate=getTanggal()+"-"+getBulan()+"-"+getTahun();
+        SimpleDateFormat sdf1 = new SimpleDateFormat("dd-MM-yyyy");
+        java.util.Date date = sdf1.parse(startDate);
+        java.sql.Date d = new java.sql.Date(date.getTime());
         return d;
     }
     

@@ -54,5 +54,6 @@ public class ControllerMovies {
     public void toAddMovie(){
         ControllerAddMovie am = new ControllerAddMovie(new ViewAddMovie(), new Movies());
         am.showView();
+        this.view.dispose();
     }
 }

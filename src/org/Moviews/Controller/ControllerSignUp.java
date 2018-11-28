@@ -8,6 +8,7 @@ package org.Moviews.Controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.Moviews.Model.User;
@@ -34,7 +35,11 @@ public class ControllerSignUp {
                 u.setJenis_kelamin(view.getJK());
                 u.setUsername(view.getUsername());
                 u.setPassword(view.getPassword());
-                u.setTgl_lahir(view.getTglLahir());
+                try {
+                    u.setTgl_lahir(view.getTglLahir());
+                } catch (ParseException ex) {
+                    Logger.getLogger(ControllerSignUp.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 u.setTempat_lahir(view.getTempatLahir());
                 u.setTipe(view.getTP());
                 try {
@@ -43,6 +48,7 @@ public class ControllerSignUp {
                     Logger.getLogger(ControllerSignUp.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 toSignIn();
+                
             }
         });
         
@@ -52,11 +58,6 @@ public class ControllerSignUp {
                 toSignIn();
             }
         });
-        
-        System.out.println(this.view.getTanggal());
-        System.out.println(this.view.getBulan());
-        System.out.println(this.view.getTahun());
-        System.out.println(this.view.getTglLahir());
     }
     
     public void showView(){

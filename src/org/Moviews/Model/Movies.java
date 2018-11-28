@@ -174,7 +174,7 @@ public class Movies {
         if(db.Manipulate(query)){
             System.out.println("Data berhasil di tambahkan ke database!");
         }else {
-            System.out.println("Data gagak di tambahkan ke database.");
+            System.out.println("Data gagal di tambahkan ke database.");
         }
         db.Disconnect();
     }
