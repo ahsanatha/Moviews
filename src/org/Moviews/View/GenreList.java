@@ -5,6 +5,10 @@
  */
 package org.Moviews.View;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
 /**
  *
  * @author GL553-VD
@@ -28,73 +32,73 @@ public class GenreList extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
+        btnMovies = new javax.swing.JButton();
+        btnGenre = new javax.swing.JButton();
+        btnCast = new javax.swing.JButton();
+        tfSearch = new javax.swing.JTextField();
+        btnSearch = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
+        btnAction = new javax.swing.JButton();
+        btnAdventure = new javax.swing.JButton();
+        btnAnimation = new javax.swing.JButton();
+        btnComedy = new javax.swing.JButton();
+        btnDrama = new javax.swing.JButton();
+        btnFantasy = new javax.swing.JButton();
+        btnHistory = new javax.swing.JButton();
+        btnHorror = new javax.swing.JButton();
+        btnMystery = new javax.swing.JButton();
+        btnScifi = new javax.swing.JButton();
+        btnSport = new javax.swing.JButton();
+        btnThriller = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/Moviews/img/MOVIEWS(2).png"))); // NOI18N
 
-        jButton1.setText("Movies");
+        btnMovies.setText("Movies");
 
-        jButton2.setText("Genre");
+        btnGenre.setText("Genre");
 
-        jButton3.setText("Cast");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnCast.setText("Cast");
+        btnCast.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnCastActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Search");
+        btnSearch.setText("Search");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 3, 48)); // NOI18N
         jLabel2.setText("Genre List");
 
-        jButton5.setText("Action");
+        btnAction.setText("Action");
 
-        jButton6.setText("Advanture");
+        btnAdventure.setText("Adventure");
 
-        jButton7.setText("Animation");
+        btnAnimation.setText("Animation");
 
-        jButton8.setText("Comedy");
+        btnComedy.setText("Comedy");
 
-        jButton9.setText("Drama");
+        btnDrama.setText("Drama");
 
-        jButton10.setText("Fantasy");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        btnFantasy.setText("Fantasy");
+        btnFantasy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                btnFantasyActionPerformed(evt);
             }
         });
 
-        jButton11.setText("History");
+        btnHistory.setText("History");
 
-        jButton12.setText("Horror");
+        btnHorror.setText("Horror");
 
-        jButton13.setText("Mystery");
+        btnMystery.setText("Mystery");
 
-        jButton14.setText("Sci-fi");
+        btnScifi.setText("Sci-fi");
 
-        jButton15.setText("Sport");
+        btnSport.setText("Sport");
 
-        jButton16.setText("thriller");
+        btnThriller.setText("thriller");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -111,37 +115,37 @@ public class GenreList extends javax.swing.JFrame {
                                 .addContainerGap(55, Short.MAX_VALUE)
                                 .addComponent(jLabel1)
                                 .addGap(51, 51, 51)
-                                .addComponent(jButton1)
+                                .addComponent(btnMovies)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton2)
+                                .addComponent(btnGenre)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnCast, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(96, 96, 96)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(btnDrama, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnAction, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnMystery, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(46, 46, 46)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE))
+                                    .addComponent(btnFantasy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnScifi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnAdventure, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE))
                                 .addGap(46, 46, 46)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
-                                    .addComponent(jButton11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                    .addComponent(btnAnimation, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
+                                    .addComponent(btnHistory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnSport, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(32, 32, 32)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tfSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton4))
+                                .addComponent(btnSearch))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(btnHorror, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnComedy, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnThriller, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -150,49 +154,49 @@ public class GenreList extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton1)
-                        .addComponent(jButton2)
-                        .addComponent(jButton3)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton4))
+                        .addComponent(btnMovies)
+                        .addComponent(btnGenre)
+                        .addComponent(btnCast)
+                        .addComponent(tfSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSearch))
                     .addComponent(jLabel1))
                 .addGap(76, 76, 76)
                 .addComponent(jLabel2)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnMystery, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(86, 86, 86)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btnAnimation, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnAdventure, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnAction, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnComedy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(34, 34, 34)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btnHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnFantasy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnDrama, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnHorror, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(39, 39, 39)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(btnSport, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnThriller, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnScifi, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(114, 114, 114))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    private void btnFantasyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFantasyActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton10ActionPerformed
+    }//GEN-LAST:event_btnFantasyActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnCastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCastActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnCastActionPerformed
 
     /**
      * @param args the command line arguments
@@ -230,24 +234,178 @@ public class GenreList extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton btnAction;
+    private javax.swing.JButton btnAdventure;
+    private javax.swing.JButton btnAnimation;
+    private javax.swing.JButton btnCast;
+    private javax.swing.JButton btnComedy;
+    private javax.swing.JButton btnDrama;
+    private javax.swing.JButton btnFantasy;
+    private javax.swing.JButton btnGenre;
+    private javax.swing.JButton btnHistory;
+    private javax.swing.JButton btnHorror;
+    private javax.swing.JButton btnMovies;
+    private javax.swing.JButton btnMystery;
+    private javax.swing.JButton btnScifi;
+    private javax.swing.JButton btnSearch;
+    private javax.swing.JButton btnSport;
+    private javax.swing.JButton btnThriller;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField tfSearch;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnAction() {
+        return btnAction;
+    }
+
+    public void setBtnAction(JButton btnAction) {
+        this.btnAction = btnAction;
+    }
+
+    public JButton getBtnAdventure() {
+        return btnAdventure;
+    }
+
+    public void setBtnAdventure(JButton btnAdventure) {
+        this.btnAdventure = btnAdventure;
+    }
+
+    public JButton getBtnAnimation() {
+        return btnAnimation;
+    }
+
+    public void setBtnAnimation(JButton btnAnimation) {
+        this.btnAnimation = btnAnimation;
+    }
+
+    public JButton getBtnCast() {
+        return btnCast;
+    }
+
+    public void setBtnCast(JButton btnCast) {
+        this.btnCast = btnCast;
+    }
+
+    public JButton getBtnComedy() {
+        return btnComedy;
+    }
+
+    public void setBtnComedy(JButton btnComedy) {
+        this.btnComedy = btnComedy;
+    }
+
+    public JButton getBtnDrama() {
+        return btnDrama;
+    }
+
+    public void setBtnDrama(JButton btnDrama) {
+        this.btnDrama = btnDrama;
+    }
+
+    public JButton getBtnFantasy() {
+        return btnFantasy;
+    }
+
+    public void setBtnFantasy(JButton btnFantasy) {
+        this.btnFantasy = btnFantasy;
+    }
+
+    public JButton getBtnGenre() {
+        return btnGenre;
+    }
+
+    public void setBtnGenre(JButton btnGenre) {
+        this.btnGenre = btnGenre;
+    }
+
+    public JButton getBtnHistory() {
+        return btnHistory;
+    }
+
+    public void setBtnHistory(JButton btnHistory) {
+        this.btnHistory = btnHistory;
+    }
+
+    public JButton getBtnHorror() {
+        return btnHorror;
+    }
+
+    public void setBtnHorror(JButton btnHorror) {
+        this.btnHorror = btnHorror;
+    }
+
+    public JButton getBtnMovies() {
+        return btnMovies;
+    }
+
+    public void setBtnMovies(JButton btnMovies) {
+        this.btnMovies = btnMovies;
+    }
+
+    public JButton getBtnMystery() {
+        return btnMystery;
+    }
+
+    public void setBtnMystery(JButton btnMystery) {
+        this.btnMystery = btnMystery;
+    }
+
+    public JButton getBtnScifi() {
+        return btnScifi;
+    }
+
+    public void setBtnScifi(JButton btnScifi) {
+        this.btnScifi = btnScifi;
+    }
+
+    public JButton getBtnSearch() {
+        return btnSearch;
+    }
+
+    public void setBtnSearch(JButton btnSearch) {
+        this.btnSearch = btnSearch;
+    }
+
+    public JButton getBtnSport() {
+        return btnSport;
+    }
+
+    public void setBtnSport(JButton btnSport) {
+        this.btnSport = btnSport;
+    }
+
+    public JButton getBtnThriller() {
+        return btnThriller;
+    }
+
+    public void setBtnThriller(JButton btnThriller) {
+        this.btnThriller = btnThriller;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JTextField getTfSearch() {
+        return tfSearch;
+    }
+
+    public void setTfSearch(JTextField tfSearch) {
+        this.tfSearch = tfSearch;
+    }
+
+    
 }

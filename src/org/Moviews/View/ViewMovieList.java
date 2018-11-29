@@ -52,6 +52,11 @@ public class ViewMovieList extends javax.swing.JFrame {
 
         btnMovies.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnMovies.setText("Movies");
+        btnMovies.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMoviesActionPerformed(evt);
+            }
+        });
 
         btnGenre.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnGenre.setText("Genre");
@@ -145,6 +150,10 @@ public class ViewMovieList extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnMoviesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoviesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMoviesActionPerformed
 
     /**
      * @param args the command line arguments

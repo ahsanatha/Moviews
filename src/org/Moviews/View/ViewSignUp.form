@@ -345,10 +345,13 @@
                 <StringItem index="9" value="10"/>
                 <StringItem index="10" value="11"/>
                 <StringItem index="11" value="12"/>
-                <StringItem index="12" value=" "/>
+                <StringItem index="12" value=""/>
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbBulanActionPerformed"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>

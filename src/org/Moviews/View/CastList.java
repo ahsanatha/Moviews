@@ -5,6 +5,11 @@
  */
 package org.Moviews.View;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+
 /**
  *
  * @author TSR
@@ -28,11 +33,11 @@ public class CastList extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnMovies = new javax.swing.JButton();
+        btnGenre = new javax.swing.JButton();
+        btnCast = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblCastList = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -40,18 +45,18 @@ public class CastList extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/moviews/img/MOVIEWS(2).png"))); // NOI18N
         jLabel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
-        jButton1.setText("Movies");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnMovies.setText("Movies");
+        btnMovies.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnMoviesActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Genre");
+        btnGenre.setText("Genre");
 
-        jButton3.setText("Cast");
+        btnCast.setText("Cast");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblCastList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -75,7 +80,7 @@ public class CastList extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblCastList);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/Moviews/img/MOVIEWS(2).png"))); // NOI18N
         jLabel2.setToolTipText("");
@@ -90,11 +95,11 @@ public class CastList extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(btnMovies)
                 .addGap(35, 35, 35)
-                .addComponent(jButton2)
+                .addComponent(btnGenre)
                 .addGap(33, 33, 33)
-                .addComponent(jButton3)
+                .addComponent(btnCast)
                 .addGap(20, 20, 20))
             .addGroup(layout.createSequentialGroup()
                 .addGap(111, 111, 111)
@@ -111,9 +116,9 @@ public class CastList extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(33, 33, 33)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3)))
+                            .addComponent(btnMovies)
+                            .addComponent(btnGenre)
+                            .addComponent(btnCast)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -125,9 +130,9 @@ public class CastList extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnMoviesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoviesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnMoviesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -165,12 +170,70 @@ public class CastList extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnCast;
+    private javax.swing.JButton btnGenre;
+    private javax.swing.JButton btnMovies;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tblCastList;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnCast() {
+        return btnCast;
+    }
+
+    public void setBtnCast(JButton btnCast) {
+        this.btnCast = btnCast;
+    }
+
+    public JButton getBtnGenre() {
+        return btnGenre;
+    }
+
+    public void setBtnGenre(JButton btnGenre) {
+        this.btnGenre = btnGenre;
+    }
+
+    public JButton getBtnMovies() {
+        return btnMovies;
+    }
+
+    public void setBtnMovies(JButton btnMovies) {
+        this.btnMovies = btnMovies;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jLabel1 = jLabel1;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JTable getTblCastList() {
+        return tblCastList;
+    }
+
+    public void setTblCastList(JTable tblCastList) {
+        this.tblCastList = tblCastList;
+    }
+
+ 
 }
