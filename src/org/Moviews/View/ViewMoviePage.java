@@ -34,6 +34,18 @@ public class ViewMoviePage extends javax.swing.JFrame {
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
+        jLabel1 = new javax.swing.JLabel();
+        btnMovies = new javax.swing.JButton();
+        btnGenre = new javax.swing.JButton();
+        Cast = new javax.swing.JButton();
+        jTextField2 = new javax.swing.JTextField();
+        btnSearch = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        btnMovies1 = new javax.swing.JButton();
+        btnGenre1 = new javax.swing.JButton();
+        Cast1 = new javax.swing.JButton();
+        jTextField3 = new javax.swing.JTextField();
+        btnSearch1 = new javax.swing.JButton();
 
         jRadioButtonMenuItem1.setSelected(true);
         jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
@@ -42,21 +54,89 @@ public class ViewMoviePage extends javax.swing.JFrame {
 
         jMenu1.setText("jMenu1");
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/Moviews/img/MOVIEWS(2).png"))); // NOI18N
+
+        btnMovies.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnMovies.setText("Movies");
+        btnMovies.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMoviesActionPerformed(evt);
+            }
+        });
+
+        btnGenre.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnGenre.setText("Genre");
+
+        Cast.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        Cast.setText("Cast");
+
+        btnSearch.setText("Search");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/Moviews/img/MOVIEWS(2).png"))); // NOI18N
+
+        btnMovies1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnMovies1.setText("Movies");
+        btnMovies1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMovies1ActionPerformed(evt);
+            }
+        });
+
+        btnGenre1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnGenre1.setText("Genre");
+
+        Cast1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        Cast1.setText("Cast");
+
+        btnSearch1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnSearch1.setText("Search");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 891, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(btnMovies1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnGenre1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Cast1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
+                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSearch1)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 789, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnGenre1)
+                        .addComponent(btnMovies1)
+                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSearch1)
+                        .addComponent(Cast1))
+                    .addComponent(jLabel2))
+                .addContainerGap(579, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnMoviesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoviesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMoviesActionPerformed
+
+    private void btnMovies1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMovies1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMovies1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -95,8 +175,20 @@ public class ViewMoviePage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Cast;
+    private javax.swing.JButton Cast1;
+    private javax.swing.JButton btnGenre;
+    private javax.swing.JButton btnGenre1;
+    private javax.swing.JButton btnMovies;
+    private javax.swing.JButton btnMovies1;
+    private javax.swing.JButton btnSearch;
+    private javax.swing.JButton btnSearch1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }

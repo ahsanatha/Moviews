@@ -117,7 +117,7 @@ public class ViewSignUp extends javax.swing.JFrame {
         cbBulan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "" }));
         cbBulan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbBulanActionPerformed(evt);
+                //cbBulanActionPerformed(evt);
             }
         });
 
