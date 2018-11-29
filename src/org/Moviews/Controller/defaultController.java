@@ -13,8 +13,9 @@ import org.Moviews.Model.User;
  * @author TSR
  */
 public abstract class defaultController {
-    protected User user;
-    
+
+    protected User user ;
+
     protected Movies movie;
 
     

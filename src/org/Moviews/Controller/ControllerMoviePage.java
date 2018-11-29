@@ -12,7 +12,7 @@ import org.Moviews.View.ViewMoviePage;
  *
  * @author TSR
  */
-public class ControllerMoviePage {
+public class ControllerMoviePage extends defaultController {
     private ViewMoviePage view;
     private Movies model;
 

@@ -21,7 +21,7 @@ import org.Moviews.View.ViewMovieList;
  *
  * @author TSR
  */
-public class ControllerHome extends defaultController{
+public class ControllerHome{
     private ViewHome view;
     // PR : apa modelnya home??????
     private Home model;

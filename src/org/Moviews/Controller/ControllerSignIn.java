@@ -20,7 +20,7 @@ import org.Moviews.View.ViewSignUp;
  *
  * @author TSR
  */
-public class ControllerSignIn{
+public class ControllerSignIn extends defaultController{
     private ViewSignIn view;
     private User model;
 
@@ -34,6 +34,7 @@ public class ControllerSignIn{
                 try {
                     if(model.checkUser(view.getUname(), view.getPass())){
                         toHome();
+                        setUser();
                     }else{
                         System.out.println("Login failed");
                         view.reset();
@@ -50,9 +51,7 @@ public class ControllerSignIn{
             public void actionPerformed(ActionEvent e) {
                 toSignUp();
             }
-            
         });
-       
     }
 
     
@@ -74,6 +73,8 @@ public class ControllerSignIn{
        view.dispose();
     }
 
-    
+    public void setUser(){
+        this.user = this.model;
+    }
     
 }
