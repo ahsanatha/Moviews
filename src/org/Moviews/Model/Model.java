@@ -49,13 +49,13 @@ public abstract class Model {
         Database db = new Database();
         db.Connect();
         int x =1;
-        String query = "SELECT "+clname+" FROM `"+tbname+"` WHERE "+clname+" = '"+key+"String.valueOf(x)'";
+        String query = "SELECT "+clname+" FROM `"+tbname+"` WHERE "+clname+" = '"+key+String.valueOf(x)+"';";
         System.out.println(query);
-        boolean m = isExist("user","id_user","USER"+(String.valueOf(x)));
+        boolean m = isExist(tbname,clname,key+(String.valueOf(x)));
         while(m){
             x = x+1;
             //System.out.println(x);
-            m = isExist("user","id_user","USER"+(String.valueOf(x)));
+            m = isExist(tbname,clname,key+(String.valueOf(x)));
         }
         db.Disconnect();
         return x;
