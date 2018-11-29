@@ -15,4 +15,16 @@ import org.Moviews.View.ViewMoviePage;
 public class ControllerMoviePage {
     private ViewMoviePage view;
     private Movies model;
+
+    public ControllerMoviePage(ViewMoviePage view, Movies model) {
+        this.view = view;
+        this.model = model;
+    }
+
+    public void ShowView(){
+        this.view.setLocationRelativeTo(null);
+        this.view.show();
+    }
+    
+    
 }

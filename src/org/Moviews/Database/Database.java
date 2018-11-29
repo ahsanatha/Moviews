@@ -33,10 +33,10 @@ public class Database {
             String pass = "";
             this.conn = DriverManager.getConnection(url, user, pass);
             this.stmt = conn.createStatement();
-            System.out.println("Connected");
+            //System.out.println("Connected");
         } catch (SQLException ex) {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("Connection Failed.");
+            //System.out.println("Connection Failed.");
         }
     }
     
@@ -44,10 +44,10 @@ public class Database {
         try {
             this.conn.close();
             this.stmt.close();
-            System.out.println("Disconnected.");
+            //System.out.println("Disconnected.");
         } catch (SQLException ex) {
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("Disconnect failed");
+            //System.out.println("Disconnect failed");
         }
     }
     

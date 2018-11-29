@@ -13,6 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.Moviews.Model.Home;
 import org.Moviews.Model.Movies;
+import org.Moviews.Model.User;
 import org.Moviews.View.ViewHome;
 import org.Moviews.View.ViewMovieList;
 
@@ -20,7 +21,7 @@ import org.Moviews.View.ViewMovieList;
  *
  * @author TSR
  */
-public class ControllerHome {
+public class ControllerHome extends defaultController{
     private ViewHome view;
     // PR : apa modelnya home??????
     private Home model;
@@ -53,6 +54,6 @@ public class ControllerHome {
         this.view.setLocationRelativeTo(null);
         this.view.show();
     }
-    
+
     
 }

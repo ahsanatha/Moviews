@@ -8,6 +8,8 @@ package org.Moviews.Controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -15,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
 import org.Moviews.Model.Movies;
 import org.Moviews.View.ViewManipulateMovie;
 import org.Moviews.View.ViewMovieList;
+import org.Moviews.View.ViewMoviePage;
 
 /**
  *
@@ -82,6 +85,17 @@ public class ControllerMovieList {
             }
         });
         
+        this.view.setOpenMovEvent(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    toMoviePage(getMovieSelectedInfo());
+                } catch (SQLException ex) {
+                    Logger.getLogger(ControllerMovieList.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        });
+        
     }
     
     public void loadMovies() throws SQLException{
@@ -99,7 +113,7 @@ public class ControllerMovieList {
     }
     
     public void toAddMovie() throws SQLException{
-        ControllerMovie am = new ControllerMovie(new ViewManipulateMovie(), new Movies(), 'c');
+        ControllerManipulateMovie am = new ControllerManipulateMovie(new ViewManipulateMovie(), new Movies(), 'c');
         am.showView();
         this.view.dispose();
     }
@@ -117,7 +131,7 @@ public class ControllerMovieList {
         Eview.setSinopsis(m.getSinopsis());
         Eview.setRating(String.valueOf(m.getRatingfilm()));
         
-        ControllerMovie em = new ControllerMovie(Eview, new Movies(), 'u');
+        ControllerManipulateMovie em = new ControllerManipulateMovie(Eview, new Movies(), 'u');
         em.setIdSelected(m.getId_mov());
         em.showView();
         this.view.dispose();
@@ -133,7 +147,22 @@ public class ControllerMovieList {
         this.model.Delete(this.view.getSelectedMovies());
     }
     
-    public void openMov(){
+    public void toMoviePage(Movies m){
+        ViewMoviePage vmp = new ViewMoviePage();
+        vmp.setJudul(m.getTitle());
+        vmp.setSinopsis(m.getSinopsis());
+        DateFormat df = new SimpleDateFormat("dd - MM - yyyy");
+        String date = df.format(m.getRelease());
+        vmp.setRelease(date);
+        vmp.setDuration(String.valueOf(m.getDuration()));
+        vmp.setDirector(m.getDirector());
+        vmp.setStudio(m.getStudio());
+        vmp.setTitle(m.getTitle());
+        vmp.setRate(String.valueOf(m.getRatingfilm())+"/10");
+        
+        ControllerMoviePage mp = new ControllerMoviePage(vmp, new Movies());
+        mp.ShowView();
+        this.view.dispose();
         
     }
 }

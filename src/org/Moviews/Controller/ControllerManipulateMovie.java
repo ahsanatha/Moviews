@@ -19,13 +19,13 @@ import org.Moviews.View.ViewMovieList;
  *
  * @author TSR
  */
-public class ControllerMovie {
+public class ControllerManipulateMovie {
     private ViewManipulateMovie view;
     private Movies model;
     private char status;
     private String idSelected;
 
-    public ControllerMovie(ViewManipulateMovie view, Movies model, char status) throws SQLException {
+    public ControllerManipulateMovie(ViewManipulateMovie view, Movies model, char status) throws SQLException {
         this.view = view;
         this.model = model;
         this.status = status;
@@ -36,7 +36,7 @@ public class ControllerMovie {
                 try {
                     toMovieList();
                 } catch (SQLException ex) {
-                    Logger.getLogger(ControllerMovie.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(ControllerManipulateMovie.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });
@@ -47,9 +47,9 @@ public class ControllerMovie {
                 Movies m = new Movies();
                 if(status == 'c'){
                     try {
-                        m.setId_mov("MOV"+(model.getCurrentId()+1));
+                        m.setId_mov("MOV"+(model.getMovId()));
                     } catch (SQLException ex) {
-                        Logger.getLogger(ControllerMovie.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(ControllerManipulateMovie.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }else if(status == 'u'){
                     m.setId_mov(idSelected);
@@ -59,12 +59,12 @@ public class ControllerMovie {
                 try {
                     m.setRatingfilm(view.getRating());
                 } catch (ParseException ex) {
-                    Logger.getLogger(ControllerMovie.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(ControllerManipulateMovie.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 try {
                     m.setRelease(view.getRilis());
                 } catch (ParseException ex) {
-                    Logger.getLogger(ControllerMovie.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(ControllerManipulateMovie.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 m.setSinopsis(view.getSinopsis());
                 m.setStudio(view.getStudio());
@@ -77,7 +77,7 @@ public class ControllerMovie {
                 try {
                     toMovieList();
                 } catch (SQLException ex) {
-                    Logger.getLogger(ControllerMovie.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(ControllerManipulateMovie.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         }); 

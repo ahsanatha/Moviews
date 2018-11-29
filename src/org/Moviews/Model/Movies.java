@@ -112,19 +112,17 @@ public class Movies {
         this.ratingfilm = ratingfilm;
     }
     
-    public int getCurrentId() throws SQLException{
-        int x = 0;
-        String query = "SELECT COUNT(id_mov) FROM `movies`";
+    public int getMovId() throws SQLException{
         Database db = new Database();
         db.Connect();
-        //System.out.println(query);
-        db.setRs(query);
-        if(!db.isRsEmpty(db.getRs())){
-            while(db.getRs().next()){
-                this.JMov = db.getRs().getInt("COUNT(id_mov)");
-                //System.out.println("Banyak user : "+this.JMov);
-                x = this.JMov;
-            }
+        int x =1;
+        String query = "SELECT id_mov FROM `movies` WHERE id_mov = 'MOV"+String.valueOf(x)+"'";
+        System.out.println(query);
+        boolean m = isExist("MOV"+(String.valueOf(x)));
+        while(m){
+            x = x+1;
+            //System.out.println(x);
+            m = isExist("MOV"+(String.valueOf(x)));
         }
         db.Disconnect();
         return x;
@@ -205,13 +203,13 @@ public class Movies {
         Database db = new Database();
         db.Connect();
         String query = "SELECT * FROM `movies` WHERE `id_mov` = '"+id+"';";
-        System.out.println(query);
+        //System.out.println(query);
         db.setRs(query);
         ResultSet rs = db.getRs();
         if(!db.isRsEmpty(rs)){
             while(rs.next()){
                 m = new Movies(
-                        "MOV"+getCurrentId(),
+                        "MOV"+getMovId(),
                         rs.getString("title"),
                         rs.getString("sinopsis"),
                         rs.getDate("release"),
@@ -237,5 +235,19 @@ public class Movies {
         }else{
             System.out.println("Data gagal di hapus.");
         }
+    }
+
+    private boolean isExist(String id) throws SQLException {
+        boolean cek = false;
+        
+        Database db = new Database();
+        db.Connect();
+        String query = "SELECT * FROM `movies` WHERE `id_mov` = '"+id+"';";
+        db.setRs(query);
+        ResultSet rs = db.getRs();
+        if(!db.isRsEmpty(db.getRs())){
+            cek = true;
+        }
+        return cek;
     }
 }
