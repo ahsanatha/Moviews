@@ -9,6 +9,8 @@ import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 import org.Moviews.Database.Database;
 
@@ -16,7 +18,7 @@ import org.Moviews.Database.Database;
  *
  * @author TSR
  */
-public class Movies {
+public class Movies extends Model{
     private String id_mov;
     private String title;
     private String sinopsis;
@@ -112,21 +114,6 @@ public class Movies {
         this.ratingfilm = ratingfilm;
     }
     
-    public int getMovId() throws SQLException{
-        Database db = new Database();
-        db.Connect();
-        int x =1;
-        String query = "SELECT id_mov FROM `movies` WHERE id_mov = 'MOV"+String.valueOf(x)+"'";
-        System.out.println(query);
-        boolean m = isExist("MOV"+(String.valueOf(x)));
-        while(m){
-            x = x+1;
-            //System.out.println(x);
-            m = isExist("MOV"+(String.valueOf(x)));
-        }
-        db.Disconnect();
-        return x;
-    }
     
     public ArrayList<Movies> getAllMovies() throws SQLException{
         ArrayList<Movies> arm = new ArrayList<>();
@@ -156,7 +143,7 @@ public class Movies {
         return arm;        
     }
     
-    public void addMovies(Movies m){
+    public void addData(Movies m){
         Database db = new Database();
         db.Connect();
         String query = "INSERT INTO `movies` VALUES('";
@@ -177,7 +164,7 @@ public class Movies {
         db.Disconnect();
     }
 
-    public void updateMovies(Movies m) {
+    public void updateData(Movies m) {
         Database db = new Database();
         db.Connect();
         String query = "UPDATE `movies` SET ";
@@ -198,56 +185,47 @@ public class Movies {
         db.Disconnect();
     }
 
-    public Movies find(String id) throws SQLException {
-        Movies m = null;
-        Database db = new Database();
-        db.Connect();
-        String query = "SELECT * FROM `movies` WHERE `id_mov` = '"+id+"';";
-        //System.out.println(query);
-        db.setRs(query);
-        ResultSet rs = db.getRs();
-        if(!db.isRsEmpty(rs)){
-            while(rs.next()){
-                m = new Movies(
-                        "MOV"+getMovId(),
-                        rs.getString("title"),
-                        rs.getString("sinopsis"),
-                        rs.getDate("release"),
-                        rs.getInt("duration"),
-                        rs.getString("director"),
-                        rs.getString("studio"),
-                        rs.getDouble("ratingfilm")
-                );
+    @Override
+    public Movies findData(String id){
+        try {
+            Movies m = null;
+            Database db = new Database();
+            db.Connect();
+            String query = "SELECT * FROM `movies` WHERE `id_mov` = '"+id+"';";
+            //System.out.println(query);
+            db.setRs(query);
+            ResultSet rs = db.getRs();
+            if(!db.isRsEmpty(rs)){
+                while(rs.next()){
+                    m = new Movies(
+                            "MOV"+getCurrentId("movies","id_mov","MOV"),
+                            rs.getString("title"),
+                            rs.getString("sinopsis"),
+                            rs.getDate("release"),
+                            rs.getInt("duration"),
+                            rs.getString("director"),
+                            rs.getString("studio"),
+                            rs.getDouble("ratingfilm")
+                    );
+                }
+            }else{
+                System.out.println("ID tidak di temukan di database!");
             }
-        }else{
-            System.out.println("ID tidak di temukan di database!");
+            return m;
+        } catch (SQLException ex) {
+            Logger.getLogger(Movies.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return m;
-    }
-    
-    public void Delete(String id){
-        Database db = new Database();
-        db.Connect();
-        String query = "DELETE FROM `movies` WHERE  `id_mov`='"+id+"';";
-        System.out.println(query);
-        if(!db.Manipulate(query)){
-            System.out.println("Data "+id+"telah di hapus.");
-        }else{
-            System.out.println("Data gagal di hapus.");
-        }
+        return null;
     }
 
-    private boolean isExist(String id) throws SQLException {
-        boolean cek = false;
-        
-        Database db = new Database();
-        db.Connect();
-        String query = "SELECT * FROM `movies` WHERE `id_mov` = '"+id+"';";
-        db.setRs(query);
-        ResultSet rs = db.getRs();
-        if(!db.isRsEmpty(db.getRs())){
-            cek = true;
-        }
-        return cek;
+    @Override
+    public void addData(Object x) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public void updateData(Object x) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }

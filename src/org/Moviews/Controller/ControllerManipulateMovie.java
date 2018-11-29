@@ -47,7 +47,7 @@ public class ControllerManipulateMovie {
                 Movies m = new Movies();
                 if(status == 'c'){
                     try {
-                        m.setId_mov("MOV"+(model.getMovId()));
+                        m.setId_mov("MOV"+(model.getCurrentId("movies", "id_mov", "MOV")));
                     } catch (SQLException ex) {
                         Logger.getLogger(ControllerManipulateMovie.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -70,9 +70,9 @@ public class ControllerManipulateMovie {
                 m.setStudio(view.getStudio());
                 m.setTitle(view.getTitle());
                 if (status == 'c'){
-                    model.addMovies(m);
+                    model.addData(m);
                 }else if (status == 'u'){
-                    model.updateMovies(m);
+                    model.updateData(m);
                 }
                 try {
                     toMovieList();

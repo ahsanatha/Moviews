@@ -16,7 +16,7 @@ import org.Moviews.Database.Database;
  *
  * @author TSR
  */
-public class User {
+public class User extends Model{
     private String id_user;
     private String nama_lengkap;
     private char tipe;
@@ -126,27 +126,11 @@ public class User {
         return valid;
     }
     
-    public int getCurrentId() throws SQLException{
-        int x = 0;
-        String query = "SELECT COUNT(id_user) FROM `user`";
-        Database db = new Database();
-        db.Connect();
-        System.out.println(query);
-        db.setRs(query);
-        if(!db.isRsEmpty(db.getRs())){
-            while(db.getRs().next()){
-                this.JUser = db.getRs().getInt("COUNT(id_user)");
-                System.out.println("Banyak user : "+this.JUser);
-                x = this.JUser;
-            }
-        }
-        db.Disconnect();
-        return x;
-    }
+    
     
     public void addUser(User u) throws SQLException{
         String query = "INSERT INTO `user` VALUES ('";
-        query += "USER"+(getCurrentId()+1)  +"','";
+        query += "USER"+(getCurrentId("user","id_user","USER")+1)  +"','";
         query += u.getNama_lengkap() +"','";
         query += u.getTipe() + "','";
         query += u.getJenis_kelamin() + "','";
@@ -162,6 +146,21 @@ public class User {
         }else{
             System.out.println("Add Value Failed.");
         } 
+    }
+
+    @Override
+    public void addData(Object x) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void updateData(Object x) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public User findData(String id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
  

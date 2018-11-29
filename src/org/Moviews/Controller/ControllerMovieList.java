@@ -139,12 +139,12 @@ public class ControllerMovieList {
     
     public Movies getMovieSelectedInfo() throws SQLException{
         String id = this.view.getSelectedMovies();
-        Movies m = this.model.find(id);
+        Movies m = this.model.findData(id);
         return m;
     }
     
     public void DeleteMovie(){
-        this.model.Delete(this.view.getSelectedMovies());
+        this.model.Delete("movies","id_mov",this.view.getSelectedMovies());
     }
     
     public void toMoviePage(Movies m){

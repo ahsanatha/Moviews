@@ -19,6 +19,7 @@ public class ControllerMoviePage extends defaultController {
     public ControllerMoviePage(ViewMoviePage view, Movies model) {
         this.view = view;
         this.model = model;
+        this.movie = model;
     }
 
     public void ShowView(){
