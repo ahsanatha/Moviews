@@ -20,12 +20,13 @@ import org.Moviews.View.ViewMoviePage;
  */
 public class ControllerMoviePage extends defaultController {
     private ViewMoviePage view;
-    private Movies model;
+    private Movies movie;
+    private UserMovies model;
 
-    public ControllerMoviePage(ViewMoviePage view, Movies model) {
+    public ControllerMoviePage(ViewMoviePage view, UserMovies model, Movies movie) {
         this.view = view;
         this.model = model;
-        this.movie = model;
+        this.movie = movie;
         
         this.view.setSubmitEvent(new ActionListener() {
             @Override
@@ -51,7 +52,7 @@ public class ControllerMoviePage extends defaultController {
         rr.setId_mov(id_mov);
         rr.setId_user(id_user);
         rr.setRating_user(this.view.getRate());
-        this.model.setRatingfilm((this.model.getRatingfilm()+this.view.getRate())/2);
+        this.model.setRatingfilm((Double.toString(this.view.getLbRate())+this.view.getRate())/2);
         rr.setReview_user(this.view.getReview());
         rr.addData(rr);
     }

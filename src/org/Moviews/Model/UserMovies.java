@@ -14,7 +14,6 @@ public class UserMovies extends Model{
     public Movies movies;
     
     public String id_retrev;
-    
     public String id_mov;
     public String id_user;
     public double rating_user;
@@ -69,6 +68,7 @@ public class UserMovies extends Model{
         this.review_user = review_user;
     }
 
+    
     @Override
     public void addData(Object x) {
         

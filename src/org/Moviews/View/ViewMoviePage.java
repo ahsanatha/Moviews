@@ -523,7 +523,7 @@ public class ViewMoviePage extends javax.swing.JFrame {
     }
 
     public void setRate(String Rate) {
-        this.lbRate.setText(Rate);
+        this.lbRate.setText(Rate+"/5");
     }
 
     public void setRelease(String Release) {
@@ -567,6 +567,12 @@ public class ViewMoviePage extends javax.swing.JFrame {
         else if(btn5.isSelected()) r = 5.0;
         return r;
     }
+
+    public String getLbRate() {
+        return lbRate.getText();
+    }
+    
+    
     
     
     

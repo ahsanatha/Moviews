@@ -15,6 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 import org.Moviews.Model.Movies;
+import org.Moviews.Model.UserMovies;
 import org.Moviews.View.ViewManipulateMovie;
 import org.Moviews.View.ViewMovieList;
 import org.Moviews.View.ViewMoviePage;
@@ -158,9 +159,9 @@ public class ControllerMovieList {
         vmp.setDirector(m.getDirector());
         vmp.setStudio(m.getStudio());
         vmp.setTitle(m.getTitle());
-        vmp.setRate(String.valueOf(m.getRatingfilm())+"/10");
+        vmp.setRate(String.valueOf(m.getRatingfilm()));
         
-        ControllerMoviePage mp = new ControllerMoviePage(vmp, new Movies());
+        ControllerMoviePage mp = new ControllerMoviePage(vmp, new UserMovies(), new Movies());
         mp.ShowView();
         this.view.dispose();
         
