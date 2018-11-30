@@ -23,7 +23,7 @@ import org.Moviews.View.ViewMoviePage;
  */
 public class ControllerMoviePage extends defaultController {
     private ViewMoviePage view;
-    private Movies movie;
+    //private Movies movie;
     private UserMovies model;
 
     public ControllerMoviePage(ViewMoviePage view, UserMovies model, Movies movie) {
@@ -65,10 +65,9 @@ public class ControllerMoviePage extends defaultController {
         sfs.setDecimalSeparator(','); 
         df.setDecimalFormatSymbols(sfs);
         double d = df.parse(this.view.getLbRate()).doubleValue();
-        
-        this.model.setRatingfilm(String.valueOf((d+this.view.getRate())/2));
+        this.movie.setRatingfilm((d+this.view.getRate())/2);
         rr.setReview_user(this.view.getReview());
-        rr.addData(rr);
+        rr.addRatRev(rr);
     }
     public void loadReview(){
         

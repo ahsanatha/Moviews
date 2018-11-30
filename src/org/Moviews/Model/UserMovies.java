@@ -5,6 +5,8 @@
  */
 package org.Moviews.Model;
 
+import org.Moviews.Database.Database;
+
 /**
  *
  * @author TSR
@@ -68,24 +70,48 @@ public class UserMovies extends Model{
         this.review_user = review_user;
     }
 
-    
-    @Override
-    public void addData(Object x) {
-        
-    }
-
-    @Override
-    public void updateData(Object x) {
-        
-    }
-
     @Override
     public Object findData(String id) {
         return null;
     }
 
-    public void setRatingfilm(String valueOf) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void addRatRev(UserMovies rr) {
+        Database db = new Database();
+        db.Connect();
+        String query = "INSERT INTO `usermovies` VALUES('";
+        query += rr.getId_retrev()+"','";
+        query += rr.getId_mov()+"','";
+        query += rr.getId_user()+"','";
+        query += String.valueOf(rr.getRating_user())+"','";
+        query += rr.getReview_user()+"')";
+        System.out.println(query);
+        if(db.Manipulate(query)){
+            System.out.println("Data berhasil di tambahkan ke database!");
+        }else {
+            System.out.println("Data gagal di tambahkan ke database.");
+        }
+        db.Disconnect();
+    }
+
+    public void updateData(Movies m) {
+        Database db = new Database();
+        db.Connect();
+        String query = "UPDATE `movies` SET ";
+        query += "`title`= '"+m.getTitle()+"',";
+        query += "`sinopsis`= '"+m.getSinopsis()+"',";
+        query += "`release`= '"+m.getRelease()+"',";
+        query += "`duration`= "+m.getDuration()+",";
+        query += "`director`= '"+m.getDirector()+"',";
+        query += "`studio`= '"+m.getStudio()+"',";
+        query += "`ratingfilm`= "+m.getRatingfilm()+"";
+        query += " WHERE `id_mov` = '"+m.getId_mov()+"';";
+        System.out.println(query);
+        if(db.Manipulate(query)){
+            System.out.println("Data berhasil di update ke database!");
+        }else {
+            System.out.println("Data gagal di update ke database.");
+        }
+        db.Disconnect();
     }
     
     

@@ -579,4 +579,5 @@ public class ViewMoviePage extends javax.swing.JFrame {
     
     
     
+    
 }

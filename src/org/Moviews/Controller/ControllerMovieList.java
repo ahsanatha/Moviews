@@ -24,7 +24,7 @@ import org.Moviews.View.ViewMoviePage;
  *
  * @author TSR
  */
-public class ControllerMovieList {
+public class ControllerMovieList extends defaultController{
     private ViewMovieList view;
     private Movies model;
 
@@ -163,6 +163,7 @@ public class ControllerMovieList {
         
         ControllerMoviePage mp = new ControllerMoviePage(vmp, new UserMovies(), new Movies());
         mp.ShowView();
+        setMovie(m);
         this.view.dispose();
         
     }

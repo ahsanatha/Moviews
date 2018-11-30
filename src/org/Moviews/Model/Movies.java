@@ -218,14 +218,5 @@ public class Movies extends Model{
         return null;
     }
 
-    @Override
-    public void addData(Object x) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void updateData(Object x) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
 }

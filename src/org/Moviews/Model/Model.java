@@ -15,8 +15,8 @@ import org.Moviews.Database.Database;
  */
 public abstract class Model {
     
-    public abstract void addData(Object x);
-    public abstract void updateData(Object x);
+    //public abstract void addData(Object x);
+    //public abstract void updateData(Object x);
     public abstract Object findData(String id);
     
     public boolean isExist(String namatable,String namakolom ,String id) throws SQLException {
