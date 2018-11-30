@@ -19,7 +19,7 @@ import org.Moviews.View.ViewSignUp;
  *
  * @author TSR
  */
-public class ControllerSignUp {
+public class ControllerSignUp extends defaultController {
     private User model;
     private ViewSignUp view;
 
@@ -59,7 +59,8 @@ public class ControllerSignUp {
             }
         });
     }
-    
+
+            
     public void showView(){
         view.setLocationRelativeTo(null);
         view.show();

@@ -83,6 +83,10 @@ public class UserMovies extends Model{
     public Object findData(String id) {
         return null;
     }
+
+    public void setRatingfilm(String valueOf) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     

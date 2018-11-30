@@ -55,11 +55,6 @@ public class ControllerSignIn extends defaultController{
     }
 
     
-    public void showView(){
-        this.view.setLocationRelativeTo(null);
-        this.view.show();
-    }
-    
     public void toHome(){
         ControllerHome home = new ControllerHome(new ViewHome(), new Home());
         home.showView();
@@ -75,6 +70,12 @@ public class ControllerSignIn extends defaultController{
 
     public void setUser(){
         this.user = this.model;
+    }
+    
+            
+    public void showView(){
+        view.setLocationRelativeTo(null);
+        view.show();
     }
     
 }

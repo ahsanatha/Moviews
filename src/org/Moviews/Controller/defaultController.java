@@ -5,6 +5,7 @@
  */
 package org.Moviews.Controller;
 
+import javax.swing.JFrame;
 import org.Moviews.Model.Movies;
 import org.Moviews.Model.User;
 
@@ -17,5 +18,7 @@ public abstract class defaultController {
     protected User user ;
 
     protected Movies movie;
+    //protected JFrame view = null;
+
 
 }
