@@ -12,6 +12,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JTextArea;
+import javax.swing.ListCellRenderer;
 
 /**
  *
@@ -75,8 +76,9 @@ public class ViewMoviePage extends javax.swing.JFrame {
         lbStudio = new javax.swing.JLabel();
         lbDirector = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jScrollPane4 = new javax.swing.JScrollPane();
+        jScrollPane5 = new javax.swing.JScrollPane();
         listReview = new javax.swing.JList<>();
+        jLabel7 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -345,7 +347,9 @@ public class ViewMoviePage extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane4.setViewportView(listReview);
+        jScrollPane5.setViewportView(listReview);
+
+        jLabel7.setText("Reviews for this movie :");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -353,14 +357,20 @@ public class ViewMoviePage extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane4)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -484,6 +494,7 @@ public class ViewMoviePage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -493,7 +504,7 @@ public class ViewMoviePage extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTextField jTextField3;
@@ -542,6 +553,9 @@ public class ViewMoviePage extends javax.swing.JFrame {
         this.lbDirector.setText(Director);
     }
 
+    public void setListRenderer(ListCellRenderer cellRenderer){
+        this.listReview.setCellRenderer(cellRenderer);
+    }
     public void setListReview(DefaultListModel listReview) {
         this.listReview.setModel(listReview);
     }
@@ -571,6 +585,21 @@ public class ViewMoviePage extends javax.swing.JFrame {
     public String getLbRate() {
         return lbRate.getText();
     }
+
+    public void setRating(double rate) {
+        if(rate >= 5.0){
+            btn5.setSelected(true);
+        }else if(rate >= 4.0){
+            btn4.setSelected(true);
+        }else if (rate >= 3.0){
+            btn3.setSelected(true);
+        }else if (rate >= 2.0){
+            btn2.setSelected(true);
+        }else {
+            btn1.setSelected(true);
+        }
+    }
+
     
     
     

@@ -5,6 +5,11 @@
  */
 package org.Moviews.Model;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
 import org.Moviews.Database.Database;
 
 /**
@@ -114,6 +119,48 @@ public class UserMovies extends Model{
         db.Disconnect();
     }
     
+    public UserMovies cekReview(String id_mov, String id_user){
+        UserMovies um = null;
+        boolean cek = false;
+        Database db = new Database();
+        db.Connect();
+        String query = "SELECT * FROM `usermovies` WHERE `id_mov`='"+id_mov+"' and `id_user`='"+id_user+"'";
+        db.setRs(query);
+        ResultSet rs = db.getRs();
+        try {
+            if(!db.isRsEmpty(rs)){
+                um = new UserMovies();
+                while(rs.next()){
+                    um.setId_retrev(rs.getString("id_ratrev"));
+                    um.setId_mov(rs.getString("id_mov"));
+                    um.setId_user(rs.getString("id_user"));
+                    um.setRating_user(rs.getDouble("rating_user"));
+                    um.setReview_user(rs.getString("review_user"));
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(UserMovies.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return um;
+    }
+    
+    public DefaultListModel loadReview(String id_mov) throws SQLException{
+        DefaultListModel dlm = new DefaultListModel();
+        dlm.clear();
+        Database db = new Database();
+        db.Connect();
+        String query = "SELECT * FROM `usermovies` JOIN `user` USING (id_user) JOIN `movies` USING (id_mov) WHERE `id_mov`='"+id_mov+"';";
+        System.out.println(query);
+        db.setRs(query);
+        ResultSet rs = db.getRs();
+        while(rs.next()){
+            String rev = rs.getString("username")+" | "+String.valueOf(rs.getDouble("rating_user"))+" | "+rs.getString("review_user");
+            dlm.addElement(rev);
+        }
+        db.Disconnect();
+        System.out.println("done load review");
+        return dlm;
+    }
     
     
     

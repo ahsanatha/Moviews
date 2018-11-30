@@ -5,14 +5,20 @@
  */
 package org.Moviews.Controller;
 
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
+import javax.swing.JList;
+import javax.swing.ListCellRenderer;
+import org.Moviews.Database.Database;
 import org.Moviews.Model.Movies;
 import org.Moviews.Model.UserMovies;
 import org.Moviews.View.ViewMoviePage;
@@ -29,9 +35,17 @@ public class ControllerMoviePage extends defaultController {
     public ControllerMoviePage(ViewMoviePage view, UserMovies model) {
         this.view = view;
         this.model = model;
-        //set movie yang dipilih.
-        //this.movie = movie;
         
+        try {
+            //load review
+            System.out.println(movie.getId_mov());
+            this.view.setListReview(model.loadReview(movie.getId_mov()));
+        } catch (SQLException ex) {
+            Logger.getLogger(ControllerMoviePage.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        //untuk mengecek apakah user pernah memberikan review di suatu film, jika iya, maka tampilkan reviewnya di kotak review
+        pernahReview();
         
         //submit Review Listener
         this.view.setSubmitEvent(new ActionListener() {
@@ -76,9 +90,15 @@ public class ControllerMoviePage extends defaultController {
         
         rr.setReview_user(this.view.getReview());
         this.model.addRatRev(rr);
-        //System.out.println("done");
+        System.out.println("done");
     }
-    public void loadReview(){
+
+    public void pernahReview(){
+        UserMovies um = model.cekReview(movie.getId_mov(),user.getId_user());
+        if( um != null){
+            this.view.setReview(um.getReview_user());
+            this.view.getRate();
+        }
         
     }
     
