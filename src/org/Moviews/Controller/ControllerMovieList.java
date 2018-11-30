@@ -149,8 +149,10 @@ public class ControllerMovieList extends defaultController{
     }
     
     public void toMoviePage(Movies m){
+        this.movie = m;
         ViewMoviePage vmp = new ViewMoviePage();
         vmp.setJudul(m.getTitle());
+        System.out.println(m.getTitle());
         vmp.setSinopsis(m.getSinopsis());
         DateFormat df = new SimpleDateFormat("dd - MM - yyyy");
         String date = df.format(m.getRelease());
@@ -161,9 +163,9 @@ public class ControllerMovieList extends defaultController{
         vmp.setTitle(m.getTitle());
         vmp.setRate(String.valueOf(m.getRatingfilm()));
         
-        ControllerMoviePage mp = new ControllerMoviePage(vmp, new UserMovies(), new Movies());
+        ControllerMoviePage mp = new ControllerMoviePage(vmp, new UserMovies());
         mp.ShowView();
-        setMovie(m);
+
         this.view.dispose();
         
     }

@@ -26,7 +26,7 @@ public class ControllerMoviePage extends defaultController {
     //private Movies movie;
     private UserMovies model;
 
-    public ControllerMoviePage(ViewMoviePage view, UserMovies model, Movies movie) {
+    public ControllerMoviePage(ViewMoviePage view, UserMovies model) {
         this.view = view;
         this.model = model;
         this.movie = movie;
@@ -35,19 +35,21 @@ public class ControllerMoviePage extends defaultController {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    try {
-                        addReviewRating(movie.getId_mov(),user.getId_user());
-                    } catch (ParseException ex) {
-                        Logger.getLogger(ControllerMoviePage.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                    loadReview();
+                    submitRatRev();
                 } catch (SQLException ex) {
+                    Logger.getLogger(ControllerMoviePage.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ParseException ex) {
                     Logger.getLogger(ControllerMoviePage.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });
     }
 
+    public void submitRatRev() throws SQLException, ParseException{
+        System.out.println("haha : "+movie.getTitle()+" "+user.getUsername());
+        addReviewRating(movie.getId_mov(),user.getId_user());
+    }
+    
     public void ShowView(){
         this.view.setLocationRelativeTo(null);
         this.view.show();
@@ -66,6 +68,7 @@ public class ControllerMoviePage extends defaultController {
         df.setDecimalFormatSymbols(sfs);
         double d = df.parse(this.view.getLbRate()).doubleValue();
         this.movie.setRatingfilm((d+this.view.getRate())/2);
+        
         rr.setReview_user(this.view.getReview());
         rr.addRatRev(rr);
     }

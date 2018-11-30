@@ -22,13 +22,5 @@ public abstract class defaultController {
     
     //protected JFrame view = null;
 
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public void setMovie(Movies movie) {
-        this.movie = movie;
-    }
-
 
 }

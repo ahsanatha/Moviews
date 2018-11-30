@@ -58,7 +58,6 @@ public class ControllerSignIn extends defaultController{
     public void toHome(){
         ControllerHome home = new ControllerHome(new ViewHome(), new Home());
         home.showView();
-        setUser(this.model);
         view.dispose();
 
     }

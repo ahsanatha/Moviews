@@ -24,6 +24,7 @@ public abstract class Model {
         
         Database db = new Database();
         db.Connect();
+        System.out.println("isExist");
         String query = "SELECT * FROM `"+namatable+"` WHERE `"+namakolom+"` = '"+id+"';";
         db.setRs(query);
         ResultSet rs = db.getRs();
