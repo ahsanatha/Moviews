@@ -141,6 +141,7 @@ public class ControllerMovieList extends defaultController{
     public Movies getMovieSelectedInfo() throws SQLException{
         String id = this.view.getSelectedMovies();
         Movies m = this.model.findData(id);
+        //System.out.println("Movie yang terpilih adalah : "+id);
         return m;
     }
     
@@ -152,7 +153,7 @@ public class ControllerMovieList extends defaultController{
         this.movie = m;
         ViewMoviePage vmp = new ViewMoviePage();
         vmp.setJudul(m.getTitle());
-        System.out.println(m.getTitle());
+        System.out.println("Selected film : "+ m.getTitle());
         vmp.setSinopsis(m.getSinopsis());
         DateFormat df = new SimpleDateFormat("dd - MM - yyyy");
         String date = df.format(m.getRelease());

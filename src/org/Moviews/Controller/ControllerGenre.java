@@ -9,6 +9,6 @@ package org.Moviews.Controller;
  *
  * @author GL553-VD
  */
-public class ControllerGenre {
+public class ControllerGenre extends defaultController{
     
 }

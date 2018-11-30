@@ -24,7 +24,7 @@ public abstract class Model {
         
         Database db = new Database();
         db.Connect();
-        System.out.println("isExist");
+        //System.out.println("isExist");
         String query = "SELECT * FROM `"+namatable+"` WHERE `"+namakolom+"` = '"+id+"';";
         db.setRs(query);
         ResultSet rs = db.getRs();
@@ -51,12 +51,13 @@ public abstract class Model {
         db.Connect();
         int x =1;
         String query = "SELECT "+clname+" FROM `"+tbname+"` WHERE "+clname+" = '"+key+String.valueOf(x)+"';";
-        System.out.println(query);
+        //System.out.println(query);
         boolean m = isExist(tbname,clname,key+(String.valueOf(x)));
         while(m){
             x = x+1;
-            //System.out.println(x);
             m = isExist(tbname,clname,key+(String.valueOf(x)));
+            System.out.println(query);
+
         }
         db.Disconnect();
         return x;

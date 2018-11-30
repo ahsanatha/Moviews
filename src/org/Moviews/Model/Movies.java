@@ -48,6 +48,7 @@ public class Movies extends Model{
     public Movies() {
         
     }
+    
 
     
     public String getId_mov() {
@@ -198,7 +199,7 @@ public class Movies extends Model{
             if(!db.isRsEmpty(rs)){
                 while(rs.next()){
                     m = new Movies(
-                            "MOV"+getCurrentId("movies","id_mov","MOV"),
+                            rs.getString("id_mov"),
                             rs.getString("title"),
                             rs.getString("sinopsis"),
                             rs.getDate("release"),

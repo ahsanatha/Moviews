@@ -29,13 +29,17 @@ public class ControllerMoviePage extends defaultController {
     public ControllerMoviePage(ViewMoviePage view, UserMovies model) {
         this.view = view;
         this.model = model;
-        this.movie = movie;
+        //set movie yang dipilih.
+        //this.movie = movie;
         
+        
+        //submit Review Listener
         this.view.setSubmitEvent(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
                     submitRatRev();
+                    //System.out.println("saya mendengar");
                 } catch (SQLException ex) {
                     Logger.getLogger(ControllerMoviePage.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (ParseException ex) {
@@ -46,7 +50,7 @@ public class ControllerMoviePage extends defaultController {
     }
 
     public void submitRatRev() throws SQLException, ParseException{
-        System.out.println("haha : "+movie.getTitle()+" "+user.getUsername());
+        //System.out.println("haha : "+movie.getId_mov()+" "+user.getNama_lengkap());
         addReviewRating(movie.getId_mov(),user.getId_user());
     }
     
@@ -56,21 +60,23 @@ public class ControllerMoviePage extends defaultController {
     }
     
     public void addReviewRating(String id_mov, String id_user) throws SQLException, ParseException{
-        UserMovies rr = new UserMovies();
+        UserMovies rr = this.model;
         rr.setId_retrev("RR"+String.valueOf(rr.getCurrentId("usermovies", "id_ratrev", "RR")));
         rr.setId_mov(id_mov);
         rr.setId_user(id_user);
         rr.setRating_user(this.view.getRate());
         
+        //String to double
         DecimalFormat df = new DecimalFormat(); 
         DecimalFormatSymbols sfs = new DecimalFormatSymbols();
-        sfs.setDecimalSeparator(','); 
+        sfs.setDecimalSeparator('.'); 
         df.setDecimalFormatSymbols(sfs);
         double d = df.parse(this.view.getLbRate()).doubleValue();
         this.movie.setRatingfilm((d+this.view.getRate())/2);
         
         rr.setReview_user(this.view.getReview());
-        rr.addRatRev(rr);
+        this.model.addRatRev(rr);
+        //System.out.println("done");
     }
     public void loadReview(){
         

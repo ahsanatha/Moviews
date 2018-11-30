@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.Moviews.Model.Home;
+import org.Moviews.Model.Movies;
 import org.Moviews.Model.User;
 import org.Moviews.View.ViewHome;
 import org.Moviews.View.ViewSignIn;
@@ -27,14 +28,15 @@ public class ControllerSignIn extends defaultController{
     public ControllerSignIn(ViewSignIn view, User model) {
         this.view = view;
         this.model = model;
+        
         //atur sign in
         this.view.setSignInEvent(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
                     if(model.checkUser(view.getUname(), view.getPass())){
-                        toHome();
                         setUser();
+                        toHome();
                     }else{
                         System.out.println("Login failed");
                         view.reset();
@@ -68,8 +70,14 @@ public class ControllerSignIn extends defaultController{
        view.dispose();
     }
 
+    public User getSelectedUser(){
+        String id = this.view.getUname();
+        User m = this.model.findData(id);
+        return m;
+    }
     public void setUser(){
-        this.user = this.model;
+        this.user = getSelectedUser();
+        System.out.println("User Logged In : "+this.user.getNama_lengkap());
     }
     
             

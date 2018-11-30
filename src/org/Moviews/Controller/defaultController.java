@@ -15,9 +15,9 @@ import org.Moviews.Model.User;
  */
 public abstract class defaultController {
 
-    protected User user ;
+    protected static User user ;
 
-    protected Movies movie;
+    protected static Movies movie;
     
     
     //protected JFrame view = null;

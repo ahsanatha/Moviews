@@ -101,6 +101,10 @@ public class User extends Model{
     public void setTipe(char tipe) {
         this.tipe = tipe;
     }
+
+    public void setId_user(String id_user) {
+        this.id_user = id_user;
+    }
     
     
     
@@ -150,7 +154,32 @@ public class User extends Model{
 
     @Override
     public User findData(String id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        User u = new User();
+        String query = "SELECT * FROM `user` WHERE `username`='"+id+"'";
+        Database db = new Database();
+        db.Connect();
+        System.out.println(query);
+        db.setRs(query);
+        ResultSet rs = db.getRs();
+        try {
+            if(!db.isRsEmpty(rs)){
+                while(rs.next()){
+                    u.setId_user(rs.getString("id_user"));
+                    u.setNama_lengkap(rs.getString("nama_lengkap"));
+                    u.setUsername(rs.getString("username"));
+                    u.setTipe(rs.getString("tipe").charAt(0));
+                    u.setJenis_kelamin(rs.getString("jenis_kelamin").charAt(0));
+                    u.setPassword(rs.getString("password"));
+                    u.setTgl_lahir(rs.getDate("tgl_lahir"));
+                    u.setTempat_lahir(rs.getString("tempat_lahir"));
+                }
+            }else{
+                System.out.println("something wrong with the query.");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(User.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return u;
     }
     
  

@@ -101,7 +101,7 @@ public class ViewMoviePage extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setText("Rating : ");
 
-        btnSubmitReview.setText("Submit");
+        btnSubmitReview.setText("Submit Review");
 
         taAddReview.setColumns(20);
         taAddReview.setRows(5);

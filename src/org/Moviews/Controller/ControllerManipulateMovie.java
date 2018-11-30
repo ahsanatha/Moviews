@@ -19,7 +19,7 @@ import org.Moviews.View.ViewMovieList;
  *
  * @author TSR
  */
-public class ControllerManipulateMovie {
+public class ControllerManipulateMovie extends defaultController{
     private ViewManipulateMovie view;
     private Movies model;
     private char status;

@@ -215,7 +215,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnSubmitReview">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Submit"/>
+            <Property name="text" type="java.lang.String" value="Submit Review"/>
           </Properties>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
