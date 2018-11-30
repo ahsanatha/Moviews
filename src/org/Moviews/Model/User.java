@@ -130,7 +130,7 @@ public class User extends Model{
     
     public void addUser(User u) throws SQLException{
         String query = "INSERT INTO `user` VALUES ('";
-        query += "USER"+(getCurrentId("user","id_user","USER")+1)  +"','";
+        query += "USER"+(getCurrentId("user","id_user","USER"))  +"','";
         query += u.getNama_lengkap() +"','";
         query += u.getTipe() + "','";
         query += u.getJenis_kelamin() + "','";

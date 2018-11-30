@@ -9,7 +9,7 @@ package org.Moviews.Model;
  *
  * @author TSR
  */
-public class UserMovies {
+public class UserMovies extends Model{
     public User user;
     public Movies movies;
     
@@ -23,6 +23,10 @@ public class UserMovies {
     public UserMovies(User user, Movies movies) {
         this.user = user;
         this.movies = movies;
+    }
+
+    public UserMovies() {
+        
     }
 
     public String getId_retrev() {
@@ -63,6 +67,21 @@ public class UserMovies {
 
     public void setReview_user(String review_user) {
         this.review_user = review_user;
+    }
+
+    @Override
+    public void addData(Object x) {
+        
+    }
+
+    @Override
+    public void updateData(Object x) {
+        
+    }
+
+    @Override
+    public Object findData(String id) {
+        return null;
     }
     
     
