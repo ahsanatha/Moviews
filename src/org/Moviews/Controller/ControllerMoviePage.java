@@ -13,7 +13,9 @@ import java.text.DecimalFormatSymbols;
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.Moviews.Model.Movies;
 import org.Moviews.Model.UserMovies;
+import org.Moviews.View.ViewMovieList;
 import org.Moviews.View.ViewMoviePage;
 
 /**
@@ -126,8 +128,10 @@ public class ControllerMoviePage extends defaultController {
         System.out.println("done");
     }
 
-    public void toMovieList() {
+    public void toMovieList() throws SQLException {
         this.movie = null;
+        ControllerMovieList mov = new ControllerMovieList(new ViewMovieList(), new Movies());
+        mov.ShowView();
         this.view.dispose();
     }
 

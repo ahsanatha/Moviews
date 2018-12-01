@@ -103,11 +103,9 @@ public class UserMovies extends Model{
         db.Connect();
         String query = "UPDATE `usermovies` SET ";
         //query += "`id_ratrev`= '"+um.getId_retrev()+"',";
-        query += "`id_mov`= '"+um.getId_mov()+"',";
-        query += "`id_user`= '"+um.getId_user()+"',";
         query += "`rating_user`= "+um.getRating_user()+",";
         query += "`review_user`= '"+um.getReview_user()+"'";
-        query += "WHERE `id_retrev` = '"+um.getId_retrev()+"'";
+        query += " WHERE `id_ratrev`='"+um.getId_retrev()+"'";
         System.out.println(query);
         if(db.Manipulate(query)){
             System.out.println("Data berhasil di update ke database!");
@@ -153,7 +151,7 @@ public class UserMovies extends Model{
         db.setRs(query);
         ResultSet rs = db.getRs();
         while(rs.next()){
-            String rev = rs.getString("username")+" | "+String.valueOf(rs.getDouble("rating_user"))+" | "+rs.getString("review_user");
+            String rev = rs.getString("nama_lengkap")+" | "+String.valueOf(rs.getDouble("rating_user"))+" | "+rs.getString("review_user");
             dlm.addElement(rev);
         }
         db.Disconnect();
