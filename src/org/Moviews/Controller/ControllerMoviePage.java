@@ -117,8 +117,7 @@ public class ControllerMoviePage extends defaultController {
         sfs.setDecimalSeparator('.');
         df.setDecimalFormatSymbols(sfs);
         double d = df.parse(this.view.getLbRate()).doubleValue();
-        this.movie.setRatingfilm((d + this.view.getRate()) / 2);
-
+       // this.movie.setRatingfilm((d + this.view.getRate())/2);
         rr.setReview_user(this.view.getReview());
         if(!this.pernahReview){
            this.model.addRatRev(rr);
