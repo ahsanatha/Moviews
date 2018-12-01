@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.Moviews.Model;
 
 import java.sql.ResultSet;
@@ -14,11 +9,7 @@ import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import org.Moviews.Database.Database;
 
-/**
- *
- * @author TSR
- */
-public class Home extends Model{
+public class Home extends Model {
 
     public Home() {
     }
@@ -26,16 +17,16 @@ public class Home extends Model{
     @Override
     public ArrayList<Movies> findData(String key) {
         Movies m = new Movies();
-        ArrayList<Movies> arm = new ArrayList<>();
+        ArrayList<Movies> arm = new ArrayList();
         try {
             Database db = new Database();
             db.Connect();
-            String query = "SELECT id_mov FROM `movies` WHERE `title` LIKE '%"+key+"%' or `director` LIKE '%"+key+"%' or `studio` LIKE '%"+key+"%' GROUP BY id_mov";
+            String query = "SELECT id_mov FROM `movies` WHERE `title` LIKE '%" + key + "%' or `director` LIKE '%" + key + "%' or `studio` LIKE '%" + key + "%' GROUP BY id_mov";
             System.out.println(query);
             db.setRs(query);
             ResultSet rs = db.getRs();
             ResultSetMetaData rsmd = rs.getMetaData();
-            while(rs.next()){
+            while (rs.next()) {
                 arm.add(m.findData(rs.getString("id_mov")));
             }
         } catch (SQLException ex) {
@@ -43,11 +34,12 @@ public class Home extends Model{
         }
         return arm;
     }
-    public DefaultListModel makeDLM(String fromSearchBox){
+
+    public DefaultListModel makeDLM(String fromSearchBox) {
         ArrayList<Movies> arm = null;
         arm = findData(fromSearchBox);
         DefaultListModel dlm = new DefaultListModel();
-        for (Movies x : arm){
+        for (Movies x : arm) {
             dlm.addElement(x.getTitle());
         }
         return dlm;

@@ -83,7 +83,7 @@ public class ViewHome extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/Moviews/img/MOVIEWS(2).png"))); // NOI18N
 
-        btnLogout.setText("Log Out");
+        btnLogout.setText("Sign Out");
 
         sub.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         sub.setForeground(new java.awt.Color(51, 153, 255));
