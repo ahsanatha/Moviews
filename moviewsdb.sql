@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2018 at 03:07 PM
+-- Generation Time: Dec 01, 2018 at 05:03 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -39,6 +39,17 @@ CREATE TABLE `movies` (
   `ratingfilm` double NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `movies`
+--
+
+INSERT INTO `movies` (`id_mov`, `title`, `sinopsis`, `release`, `duration`, `director`, `studio`, `ratingfilm`) VALUES
+('MOV1', 'Iron Man', 'Tony Stark. Genius, billionaire, playboy, philanthropist. Son of legendary inventor and weapons contractor Howard Stark.', '1988-01-02', 124, 'jon favreaus', 'marvel interprises', 3),
+('MOV2', 'venom', 'When Eddie Brock acquires the powers of a symbiote, he will have to release his alter-ego \"Venom\" to save his life.', '2018-08-05', 112, 'Ruben Fleischer', 'columbia pictures corporation', 3),
+('MOV3', 'kimi no nawa', 'Mitsuha is the daughter of the mayor of a small mountain town.', '2016-04-07', 106, 'makoto shinkai', 'comix wave film', 5),
+('MOV4', 'the nun', 'When a young nun at a cloistered abbey in Romania takes her own life, a priest with a haunted past and a novitiate on the threshold of her final vows are sent by the Vatican to investigate. ', '1988-01-05', 96, 'corin hardy', 'atomic monster', 5),
+('MOV5', 'Captain America: Civil War', 'With many people fearing the actions of super heroes,', '1988-01-01', 247, 'anthony russo', 'marvel studio', 4);
+
 -- --------------------------------------------------------
 
 --
@@ -61,7 +72,11 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `nama_lengkap`, `tipe`, `jenis_kelamin`, `password`, `username`, `tgl_lahir`, `tempat_lahir`) VALUES
-('USER1', 'Muhammad Ahsan Athallah', 'A', 'L', '123', 'ahsanatha', '1999-10-11', 'Jakarta');
+('USER1', 'Muhammad Ahsan Athallah', 'A', 'L', '123', 'ahsanatha', '1999-10-11', 'Jakarta'),
+('USER2', 'muhamad zikri syahbani', 'A', 'L', '1234', 'zikrisy', '1998-12-18', 'bandung'),
+('USER3', 'aldrin marbun', 'R', 'L', '123', 'aljpmarbun', '1999-02-07', 'jakarta'),
+('USER4', 'maman abdulrahman', 'R', 'L', '123', 'rahmanabdul', '2000-07-08', 'garut'),
+('USER5', 'sinta cyntia', 'R', 'P', '123', 'icaica', '1998-03-24', 'padang');
 
 -- --------------------------------------------------------
 
@@ -76,6 +91,22 @@ CREATE TABLE `usermovies` (
   `rating_user` double NOT NULL,
   `review_user` mediumtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `usermovies`
+--
+
+INSERT INTO `usermovies` (`id_ratrev`, `id_mov`, `id_user`, `rating_user`, `review_user`) VALUES
+('RR1', 'MOV1', 'USER3', 4, 'mantap djiwa bosque'),
+('RR10', 'MOV4', 'USER2', 5, 'De best!'),
+('RR2', 'MOV1', 'USER4', 2, 'kurang memuaskan'),
+('RR3', 'MOV1', 'USER5', 5, 'rame banget ini film'),
+('RR4', 'MOV2', 'USER1', 4, 'Keren Banget!'),
+('RR5', 'MOV3', 'USER1', 5, 'Favorite Anime Movie!'),
+('RR6', 'MOV4', 'USER1', 1, 'ga suka film horor.'),
+('RR7', 'MOV5', 'USER1', 3, 'meh'),
+('RR8', 'MOV1', 'USER2', 1, 'biasa aja'),
+('RR9', 'MOV5', 'USER2', 4, 'BAGUS PARAH. WAJIB NONTON.');
 
 --
 -- Indexes for dumped tables
