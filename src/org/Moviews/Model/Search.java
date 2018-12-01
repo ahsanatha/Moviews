@@ -20,8 +20,8 @@ import org.Moviews.Database.Database;
 public class Search extends Model{
 
     @Override
-    //find by title.
     public Movies findData(String title) {
+        //find by title.
         Movies m = null;
         try {
             Database db = new Database();

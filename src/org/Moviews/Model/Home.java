@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
 import org.Moviews.Database.Database;
 
 /**
@@ -42,5 +43,13 @@ public class Home extends Model{
         }
         return arm;
     }
-    
+    public DefaultListModel makeDLM(String fromSearchBox){
+        ArrayList<Movies> arm = null;
+        arm = findData(fromSearchBox);
+        DefaultListModel dlm = new DefaultListModel();
+        for (Movies x : arm){
+            dlm.addElement(x.getTitle());
+        }
+        return dlm;
+    }
 }
