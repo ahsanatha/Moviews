@@ -34,6 +34,8 @@ public class ViewMoviePage extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        sub = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         btn5 = new javax.swing.JRadioButton();
         btn4 = new javax.swing.JRadioButton();
@@ -44,10 +46,7 @@ public class ViewMoviePage extends javax.swing.JFrame {
         btnSubmitReview = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         taAddReview = new javax.swing.JTextArea();
-        jLabel2 = new javax.swing.JLabel();
         btnMovies1 = new javax.swing.JButton();
-        btnGenre1 = new javax.swing.JButton();
-        Cast1 = new javax.swing.JButton();
         btnSearch1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -73,6 +72,12 @@ public class ViewMoviePage extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        sub.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        sub.setForeground(new java.awt.Color(51, 153, 255));
+        sub.setText("Your Trusted Source For Movie Review");
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/Moviews/img/MOVIEWS(2).png"))); // NOI18N
 
         jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -149,8 +154,6 @@ public class ViewMoviePage extends javax.swing.JFrame {
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/Moviews/img/MOVIEWS(2).png"))); // NOI18N
-
         btnMovies1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnMovies1.setText("Movies");
         btnMovies1.addActionListener(new java.awt.event.ActionListener() {
@@ -158,12 +161,6 @@ public class ViewMoviePage extends javax.swing.JFrame {
                 btnMovies1ActionPerformed(evt);
             }
         });
-
-        btnGenre1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnGenre1.setText("Genre");
-
-        Cast1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        Cast1.setText("Cast");
 
         btnSearch1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnSearch1.setText("Search");
@@ -354,12 +351,10 @@ public class ViewMoviePage extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
+                .addComponent(sub, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(79, 79, 79)
                 .addComponent(btnMovies1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnGenre1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(Cast1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(180, 180, 180)
                 .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnSearch1)
@@ -385,11 +380,11 @@ public class ViewMoviePage extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnMovies1)
-                        .addComponent(btnGenre1)
-                        .addComponent(Cast1)
                         .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnSearch1)))
+                        .addComponent(btnSearch1))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnMovies1)
+                        .addComponent(sub)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -448,13 +443,11 @@ public class ViewMoviePage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Cast1;
     private javax.swing.JRadioButton btn1;
     private javax.swing.JRadioButton btn2;
     private javax.swing.JRadioButton btn3;
     private javax.swing.JRadioButton btn4;
     private javax.swing.JRadioButton btn5;
-    private javax.swing.JButton btnGenre1;
     private javax.swing.JButton btnMovies1;
     private javax.swing.JButton btnSearch1;
     private javax.swing.JButton btnSubmitReview;
@@ -484,6 +477,7 @@ public class ViewMoviePage extends javax.swing.JFrame {
     private javax.swing.JLabel lbRelease;
     private javax.swing.JLabel lbStudio;
     private javax.swing.JList<String> listReview;
+    private javax.swing.JLabel sub;
     private javax.swing.JTextArea taAddReview;
     private javax.swing.JTextArea taSinopsis;
     // End of variables declaration//GEN-END:variables

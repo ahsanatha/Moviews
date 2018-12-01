@@ -19,7 +19,6 @@ public abstract class defaultController {
 
     protected static Movies movie;
     
-    
     //protected JFrame view = null;
 
 

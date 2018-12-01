@@ -209,4 +209,11 @@ public class ViewHome extends javax.swing.JFrame {
         });
     }
     
+    public void setSearchEvent(ActionListener act){
+        btnSearch.addActionListener(act);
+    }
+    
+    public String getSearchBox(){
+        return tfSearch.getText();
+    }
 }

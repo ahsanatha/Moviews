@@ -8,8 +8,10 @@ package org.Moviews.Controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
 import org.Moviews.Model.Home;
 import org.Moviews.Model.Movies;
 import org.Moviews.View.ViewHome;
@@ -23,6 +25,9 @@ public class ControllerHome extends defaultController{
     private ViewHome view;
     // PR : apa modelnya home??????
     private Home model;
+    private ArrayList<Movies> arm = new ArrayList<>();
+    private Movies m = new Movies();
+    private Object o;
 
     public ControllerHome(ViewHome view, Home model) {
         this.view = view;
@@ -40,8 +45,24 @@ public class ControllerHome extends defaultController{
             
         });
         this.view.setSearchBox();
+        
+        this.view.setSearchEvent(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                arm = model.findData(view.getSearchBox());
+                DefaultListModel dlm = new DefaultListModel();
+                for (Movies x : arm){
+                    dlm.addElement(x.getTitle());
+                }
+                ControllerSearchResult sr = new ControllerSearchResult(dlm);
+                sr.showView();
+                closeView();
+            }
+        });
     }
-    
+    public void closeView(){
+        this.view.dispose();
+    }
     public void toMovie() throws SQLException{
         ControllerMovieList mov = new ControllerMovieList(new ViewMovieList(), new Movies());
         mov.ShowView();

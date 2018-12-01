@@ -185,6 +185,7 @@ public class Movies extends Model{
     }
 
     @Override
+    //find movies by id;
     public Movies findData(String id){
         try {
             Movies m = null;

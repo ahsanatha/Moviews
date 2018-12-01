@@ -91,12 +91,20 @@ public class ControllerMovieList extends defaultController{
             public void actionPerformed(ActionEvent e) {
                 try {
                     toMoviePage(getMovieSelectedInfo());
+                    closeView();
                 } catch (SQLException ex) {
                     Logger.getLogger(ControllerMovieList.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });
         
+    }
+
+    ControllerMovieList() {
+        
+    }
+    public void closeView(){
+        this.view.dispose();         
     }
     
     public void loadMovies() throws SQLException{

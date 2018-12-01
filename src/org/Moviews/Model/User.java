@@ -152,7 +152,8 @@ public class User extends Model{
         } 
     }
 
-    @Override
+    @Override 
+    //find by user id;
     public User findData(String id) {
         User u = new User();
         String query = "SELECT * FROM `user` WHERE `username`='"+id+"'";

@@ -17,7 +17,7 @@ public abstract class Model {
     
     //public abstract void addData(Object x);
     //public abstract void updateData(Object x);
-    public abstract Object findData(String id);
+    public abstract Object findData(String x);
     
     public boolean isExist(String namatable,String namakolom ,String id) throws SQLException {
         boolean cek = false;

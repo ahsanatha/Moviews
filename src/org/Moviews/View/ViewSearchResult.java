@@ -6,7 +6,7 @@
 package org.Moviews.View;
 
 import java.awt.event.ActionListener;
-import javax.swing.table.DefaultTableModel;
+import javax.swing.DefaultListModel;
 
 /**
  *
@@ -32,14 +32,13 @@ public class ViewSearchResult extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         btnMovies = new javax.swing.JButton();
-        btnGenre = new javax.swing.JButton();
-        Cast = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
         btnOpen = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        ListResult = new javax.swing.JTable();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        ListResult = new javax.swing.JList<>();
+        sub = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,29 +47,22 @@ public class ViewSearchResult extends javax.swing.JFrame {
         btnMovies.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnMovies.setText("Movies");
 
-        btnGenre.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnGenre.setText("Genre");
-
-        Cast.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        Cast.setText("Cast");
-
         btnSearch.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnSearch.setText("Search");
 
+        btnOpen.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnOpen.setText("Open");
 
-        ListResult.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane2.setViewportView(ListResult);
+        ListResult.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(ListResult);
+
+        sub.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        sub.setForeground(new java.awt.Color(51, 153, 255));
+        sub.setText("Your Trusted Source For Movie Review");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -81,20 +73,18 @@ public class ViewSearchResult extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1)
+                        .addGap(18, 18, 18)
                         .addComponent(btnOpen)
                         .addGap(12, 12, 12))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(sub)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                         .addComponent(btnMovies, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnGenre, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Cast, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                         .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnSearch)))
@@ -104,20 +94,19 @@ public class ViewSearchResult extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnGenre)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnMovies)
                         .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnSearch)
-                        .addComponent(Cast)))
-                .addGap(18, 18, 18)
+                        .addComponent(sub)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(btnOpen)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(22, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -160,24 +149,27 @@ public class ViewSearchResult extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Cast;
-    private javax.swing.JTable ListResult;
-    private javax.swing.JButton btnGenre;
+    private javax.swing.JList<String> ListResult;
     private javax.swing.JButton btnMovies;
     private javax.swing.JButton btnOpen;
     private javax.swing.JButton btnSearch;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel sub;
     // End of variables declaration//GEN-END:variables
 
 
-    public void setListResult(DefaultTableModel ListResult) {
+    public void setListResult(DefaultListModel ListResult) {
         this.ListResult.setModel(ListResult);
     }
 
     public void SetOpenEvent(ActionListener act){
         btnOpen.addActionListener(act);
+    }
+    
+    public String getSelectedMovies(){
+        return ListResult.getSelectedValue();
     }
 }
