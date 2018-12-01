@@ -110,15 +110,6 @@ public class ControllerMoviePage extends defaultController {
         rr.setId_mov(id_mov);
         rr.setId_user(id_user);
         rr.setRating_user(this.view.getRate());
-
-        //String to double
-        DecimalFormat df = new DecimalFormat();
-        DecimalFormatSymbols sfs = new DecimalFormatSymbols();
-        sfs.setDecimalSeparator('.');
-        df.setDecimalFormatSymbols(sfs);
-        double d = df.parse(this.view.getLbRate()).doubleValue();
-        this.movie.setRatingfilm((d + this.view.getRate()) / 2);
-
         rr.setReview_user(this.view.getReview());
         if(!this.pernahReview){
            this.model.addRatRev(rr);

@@ -50,11 +50,7 @@ public class ControllerHome extends defaultController{
         this.view.setSearchEvent(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                arm = model.findData(view.getSearchBox());
-                DefaultListModel dlm = new DefaultListModel();
-                for (Movies x : arm){
-                    dlm.addElement(x.getTitle());
-                }
+                DefaultListModel dlm = model.makeDLM(view.getSearchBox());
                 ControllerSearchResult sr = new ControllerSearchResult(dlm);
                 sr.showView();
                 closeView();

@@ -16,7 +16,7 @@ import org.Moviews.View.ViewSearchResult;
  *
  * @author TSR
  */
-public class ControllerSearchResult {
+public class ControllerSearchResult extends defaultController{
     private ViewSearchResult view = new ViewSearchResult();
     private Search model = new Search();
 
@@ -31,8 +31,17 @@ public class ControllerSearchResult {
                 closeView();
             }
         });
+        this.view.setHomeEvent(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                toHomeCall();
+                closeView();
+            }
+        });
     }
-    
+    public void toHomeCall(){
+        toHome();
+    }
     public void closeView(){
         this.view.dispose();
     }

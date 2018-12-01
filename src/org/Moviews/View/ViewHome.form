@@ -126,7 +126,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnLogout">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Log Out"/>
+        <Property name="text" type="java.lang.String" value="Sign Out"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="sub">
