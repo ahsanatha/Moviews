@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.Moviews.Controller;
+package org.Moviews.Model;
 
 /**
  *
- * @author GL553-VD
+ * @author TSR
  */
-public class ControllerGenre extends defaultController{
+public class Search {
     
 }

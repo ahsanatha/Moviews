@@ -7,13 +7,11 @@ package org.Moviews.Controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.Moviews.Model.Home;
 import org.Moviews.Model.Movies;
-import org.Moviews.Model.User;
 import org.Moviews.View.ViewHome;
 import org.Moviews.View.ViewMovieList;
 

@@ -3,22 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/TSR/Documents/NetBeansProjects/Moviews/src/org/Moviews/View/AddCast.java</file>
-            <file>file:/C:/Users/TSR/Documents/NetBeansProjects/Moviews/src/org/Moviews/View/ProfilePage.java</file>
-            <file>file:/C:/Users/TSR/Documents/NetBeansProjects/Moviews/src/org/Moviews/Controller/ControllerSignIn.java</file>
-            <file>file:/C:/Users/TSR/Documents/NetBeansProjects/Moviews/src/org/Moviews/View/ViewHome.java</file>
-            <file>file:/C:/Users/TSR/Documents/NetBeansProjects/Moviews/src/org/Moviews/Database/Database.java</file>
-            <file>file:/C:/Users/TSR/Documents/NetBeansProjects/Moviews/src/org/Moviews/View/GenreList.java</file>
-            <file>file:/C:/Users/TSR/Documents/NetBeansProjects/Moviews/src/org/Moviews/View/MoviePage.java</file>
-            <file>file:/C:/Users/TSR/Documents/NetBeansProjects/Moviews/src/org/Moviews/View/CastPage.java</file>
-            <file>file:/C:/Users/TSR/Documents/NetBeansProjects/Moviews/src/org/Moviews/Model/Home.java</file>
+            <file>file:/C:/Users/TSR/Documents/NetBeansProjects/Moviews/src/org/Moviews/View/ViewSearchResult.java</file>
+            <file>file:/C:/Users/TSR/Documents/NetBeansProjects/Moviews/src/org/Moviews/View/ViewMoviePage.java</file>
             <file>file:/C:/Users/TSR/Documents/NetBeansProjects/Moviews/src/org/Moviews/Model/Movies.java</file>
-            <file>file:/C:/Users/TSR/Documents/NetBeansProjects/Moviews/src/org/Moviews/Controller/ControllerMovies.java</file>
-            <file>file:/C:/Users/TSR/Documents/NetBeansProjects/Moviews/src/org/Moviews/View/ViewMovieList.java</file>
-            <file>file:/C:/Users/TSR/Documents/NetBeansProjects/Moviews/src/org/Moviews/View/ViewAddMovie.java</file>
-            <file>file:/C:/Users/TSR/Documents/NetBeansProjects/Moviews/src/org/Moviews/View/ViewSignUp.java</file>
-            <file>file:/C:/Users/TSR/Documents/NetBeansProjects/Moviews/src/org/Moviews/Controller/ControllerHome.java</file>
-            <file>file:/C:/Users/TSR/Documents/NetBeansProjects/Moviews/src/org/Moviews/View/CastList.java</file>
+            <file>file:/C:/Users/TSR/Documents/NetBeansProjects/Moviews/src/org/Moviews/View/ViewManipulateMovie.java</file>
+            <file>file:/C:/Users/TSR/Documents/NetBeansProjects/Moviews/src/org/Moviews/Model/UserMovies.java</file>
+            <file>file:/C:/Users/TSR/Documents/NetBeansProjects/Moviews/src/org/Moviews/View/ViewHome.java</file>
+            <file>file:/C:/Users/TSR/Documents/NetBeansProjects/Moviews/src/org/Moviews/Controller/ControllerSearch.java</file>
+            <file>file:/C:/Users/TSR/Documents/NetBeansProjects/Moviews/src/org/Moviews/Model/Search.java</file>
         </group>
     </open-files>
 </project-private>

@@ -43,7 +43,7 @@ public class ControllerMoviePage extends defaultController {
         if (um != null) {
             this.view.setReview(um.getReview_user());
             this.view.setRating(um.getRating_user());
-            System.out.println("udah pernah review, id:"+um.getId_retrev());
+            //System.out.println("udah pernah review, id:"+um.getId_retrev());
             this.pernahReview = true;
         }
 
@@ -65,7 +65,6 @@ public class ControllerMoviePage extends defaultController {
     }
 
     public void submitRatRev() throws SQLException, ParseException {
-        //System.out.println("haha : "+movie.getId_mov()+" "+user.getNama_lengkap());
         addReviewRating(movie.getId_mov(), user.getId_user());
     }
 
