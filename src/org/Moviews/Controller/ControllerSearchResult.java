@@ -43,6 +43,7 @@ public class ControllerSearchResult {
     }
     
     public void showView(){
+        this.view.setLocationRelativeTo(null);
         this.view.show();
     }
 

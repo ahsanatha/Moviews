@@ -40,8 +40,8 @@ public class ViewManipulateMovie extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        btnMovies = new javax.swing.JButton();
-        jTextField2 = new javax.swing.JTextField();
+        btnHome = new javax.swing.JButton();
+        tfSearch = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -71,15 +71,14 @@ public class ViewManipulateMovie extends javax.swing.JFrame {
         sub = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1029, 720));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/Moviews/img/MOVIEWS(2).png"))); // NOI18N
 
-        btnMovies.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnMovies.setText("Home");
-        btnMovies.addActionListener(new java.awt.event.ActionListener() {
+        btnHome.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnHome.setText("Home");
+        btnHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMoviesActionPerformed(evt);
+                btnHomeActionPerformed(evt);
             }
         });
 
@@ -286,9 +285,9 @@ public class ViewManipulateMovie extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(sub, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                        .addComponent(btnMovies)
+                        .addComponent(btnHome)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tfSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnSearch))
                     .addGroup(layout.createSequentialGroup()
@@ -303,11 +302,11 @@ public class ViewManipulateMovie extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tfSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnSearch))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(sub)
-                        .addComponent(btnMovies)))
+                        .addComponent(btnHome)))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -332,9 +331,9 @@ public class ViewManipulateMovie extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel9MouseClicked
 
-    private void btnMoviesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoviesActionPerformed
+    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnMoviesActionPerformed
+    }//GEN-LAST:event_btnHomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -377,7 +376,7 @@ public class ViewManipulateMovie extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnDone;
-    private javax.swing.JButton btnMovies;
+    private javax.swing.JButton btnHome;
     private javax.swing.JButton btnSearch;
     private javax.swing.JComboBox<String> cbBulan;
     private javax.swing.JComboBox<String> cbTahun;
@@ -397,11 +396,11 @@ public class ViewManipulateMovie extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel sub;
     private javax.swing.JTextField tfDirector;
     private javax.swing.JTextField tfDuration;
     private javax.swing.JTextField tfRating;
+    private javax.swing.JTextField tfSearch;
     private javax.swing.JTextArea tfSinopsis;
     private javax.swing.JTextField tfStudio;
     private javax.swing.JTextField tfTitle;
@@ -508,5 +507,14 @@ public class ViewManipulateMovie extends javax.swing.JFrame {
         this.tfRating.setText(Rating);;
     }
     
+    public void setHomeEvent(ActionListener act){
+        this.btnHome.addActionListener(act);
+    }
     
+    public void setSearchEvent(ActionListener act){
+        this.btnSearch.addActionListener(act);
+    }
+    public String getSearchBox(){
+        return this.tfSearch.getText();
+    }
 }

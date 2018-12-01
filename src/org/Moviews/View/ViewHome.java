@@ -216,4 +216,8 @@ public class ViewHome extends javax.swing.JFrame {
     public String getSearchBox(){
         return tfSearch.getText();
     }
+    
+    public void setLogOutEvent(ActionListener act){
+        btnLogout.addActionListener(act);
+    }
 }

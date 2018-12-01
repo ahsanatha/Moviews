@@ -46,8 +46,8 @@ public class ViewMoviePage extends javax.swing.JFrame {
         btnSubmitReview = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         taAddReview = new javax.swing.JTextArea();
-        btnMovies1 = new javax.swing.JButton();
-        btnSearch1 = new javax.swing.JButton();
+        btnHome = new javax.swing.JButton();
+        btnSearch = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -69,7 +69,7 @@ public class ViewMoviePage extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         listReview = new javax.swing.JList<>();
         jLabel7 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        tfSearch = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -154,16 +154,16 @@ public class ViewMoviePage extends javax.swing.JFrame {
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
-        btnMovies1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnMovies1.setText("Movies");
-        btnMovies1.addActionListener(new java.awt.event.ActionListener() {
+        btnHome.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnHome.setText("Home");
+        btnHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMovies1ActionPerformed(evt);
+                btnHomeActionPerformed(evt);
             }
         });
 
-        btnSearch1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnSearch1.setText("Search");
+        btnSearch.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnSearch.setText("Search");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -353,11 +353,11 @@ public class ViewMoviePage extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(sub, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(79, 79, 79)
-                .addComponent(btnMovies1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnHome, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tfSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnSearch1)
+                .addComponent(btnSearch)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -380,10 +380,10 @@ public class ViewMoviePage extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnSearch1))
+                        .addComponent(tfSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSearch))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnMovies1)
+                        .addComponent(btnHome)
                         .addComponent(sub)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -402,9 +402,9 @@ public class ViewMoviePage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnMovies1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMovies1ActionPerformed
+    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnMovies1ActionPerformed
+    }//GEN-LAST:event_btnHomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -448,8 +448,8 @@ public class ViewMoviePage extends javax.swing.JFrame {
     private javax.swing.JRadioButton btn3;
     private javax.swing.JRadioButton btn4;
     private javax.swing.JRadioButton btn5;
-    private javax.swing.JButton btnMovies1;
-    private javax.swing.JButton btnSearch1;
+    private javax.swing.JButton btnHome;
+    private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnSubmitReview;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
@@ -469,7 +469,6 @@ public class ViewMoviePage extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JLabel lbDirector;
     private javax.swing.JLabel lbDuration;
     private javax.swing.JLabel lbJudul;
@@ -480,6 +479,7 @@ public class ViewMoviePage extends javax.swing.JFrame {
     private javax.swing.JLabel sub;
     private javax.swing.JTextArea taAddReview;
     private javax.swing.JTextArea taSinopsis;
+    private javax.swing.JTextField tfSearch;
     // End of variables declaration//GEN-END:variables
 
     public void setDuration(String Duration) {
@@ -557,13 +557,15 @@ public class ViewMoviePage extends javax.swing.JFrame {
         }
     }
 
+    public void setHomeEvent(ActionListener act){
+        this.btnHome.addActionListener(act);
+    }
     
-    
-    
-    
-    
-    
-    
-    
-    
+    public void setSearchEvent(ActionListener act){
+        this.btnSearch.addActionListener(act);
+    }
+    public String getSearchBox(){
+        return this.tfSearch.getText();
+    }
+
 }

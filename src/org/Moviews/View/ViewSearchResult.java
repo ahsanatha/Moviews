@@ -31,9 +31,7 @@ public class ViewSearchResult extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        btnMovies = new javax.swing.JButton();
-        jTextField2 = new javax.swing.JTextField();
-        btnSearch = new javax.swing.JButton();
+        btnHome = new javax.swing.JButton();
         btnOpen = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -44,11 +42,8 @@ public class ViewSearchResult extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/Moviews/img/MOVIEWS(2).png"))); // NOI18N
 
-        btnMovies.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnMovies.setText("Movies");
-
-        btnSearch.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnSearch.setText("Search");
+        btnHome.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnHome.setText("Home");
 
         btnOpen.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnOpen.setText("Open");
@@ -77,18 +72,14 @@ public class ViewSearchResult extends javax.swing.JFrame {
                         .addComponent(jScrollPane1)
                         .addGap(18, 18, 18)
                         .addComponent(btnOpen)
-                        .addGap(12, 12, 12))
+                        .addGap(22, 22, 22))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(sub)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                        .addComponent(btnMovies, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnSearch)))
-                .addContainerGap())
+                        .addComponent(btnHome, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(295, 295, 295))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,9 +88,7 @@ public class ViewSearchResult extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnMovies)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnSearch)
+                        .addComponent(btnHome)
                         .addComponent(sub)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,13 +139,11 @@ public class ViewSearchResult extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList<String> ListResult;
-    private javax.swing.JButton btnMovies;
+    private javax.swing.JButton btnHome;
     private javax.swing.JButton btnOpen;
-    private javax.swing.JButton btnSearch;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel sub;
     // End of variables declaration//GEN-END:variables
 
@@ -172,4 +159,9 @@ public class ViewSearchResult extends javax.swing.JFrame {
     public String getSelectedMovies(){
         return ListResult.getSelectedValue();
     }
+    
+    public void setHomeEvent(ActionListener act){
+        this.btnHome.addActionListener(act);
+    }
+
 }

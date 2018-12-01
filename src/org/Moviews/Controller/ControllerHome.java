@@ -14,8 +14,10 @@ import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import org.Moviews.Model.Home;
 import org.Moviews.Model.Movies;
+import org.Moviews.Model.User;
 import org.Moviews.View.ViewHome;
 import org.Moviews.View.ViewMovieList;
+import org.Moviews.View.ViewSignIn;
 
 /**
  *
@@ -23,7 +25,6 @@ import org.Moviews.View.ViewMovieList;
  */
 public class ControllerHome extends defaultController{
     private ViewHome view;
-    // PR : apa modelnya home??????
     private Home model;
     private ArrayList<Movies> arm = new ArrayList<>();
     private Movies m = new Movies();
@@ -59,6 +60,13 @@ public class ControllerHome extends defaultController{
                 closeView();
             }
         });
+        
+        this.view.setLogOutEvent(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                toSignIn();
+            }
+        });
     }
     public void closeView(){
         this.view.dispose();
@@ -74,5 +82,11 @@ public class ControllerHome extends defaultController{
         this.view.show();
     }
 
-    
+    public void toSignIn(){
+        ControllerSignIn in = new ControllerSignIn(new ViewSignIn(), new User());
+        in.showView();
+        view.dispose();
+        System.out.println("User Logged out.");
+        this.user = null;
+    }
 }

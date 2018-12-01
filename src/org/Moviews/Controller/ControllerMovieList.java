@@ -27,7 +27,10 @@ import org.Moviews.View.ViewMoviePage;
 public class ControllerMovieList extends defaultController{
     private ViewMovieList view;
     private Movies model;
-
+    
+    public ControllerMovieList() {
+        
+    }
     public ControllerMovieList(ViewMovieList view, Movies model) throws SQLException {
         this.view = view;
         this.model = model;
@@ -98,14 +101,39 @@ public class ControllerMovieList extends defaultController{
             }
         });
         
+        this.view.setHomeEvent(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                toHomeCall();
+                closeView();
+            }
+        });
+        
+        this.view.setSearchEvent(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                searchCall();
+                closeView();
+            }
+        });
+        
+        if(this.user.getTipe() == 'R'){
+            this.view.addVisibility(false);
+            this.view.editVisibility(false);
+            this.view.deleteVisibility(false);
+        }
+    }
+    public void toHomeCall(){
+        toHome();
+    }
+    public void searchCall(){
+        search(this.view.getSearchBox());
+    }
+    
+    public void closeView(){
+        this.view.dispose();
     }
 
-    ControllerMovieList() {
-        
-    }
-    public void closeView(){
-        this.view.dispose();         
-    }
     
     public void loadMovies() throws SQLException{
         DefaultTableModel dtm = new DefaultTableModel(new String[]{"ID","Judul","Rating","Tanggal Rilis","Durasi(menit)","Sutradara","Sinopsis"},0);

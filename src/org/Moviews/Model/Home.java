@@ -29,7 +29,7 @@ public class Home extends Model{
         try {
             Database db = new Database();
             db.Connect();
-            String query = "SELECT id_mov FROM `usermovies` JOIN `movies` USING (id_mov) WHERE `review_user` LIKE '%"+key+"%' or `title` LIKE '%"+key+"%' or `sinopsis` LIKE '%"+key+"&' or `director` LIKE '%"+key+"%' or `studio` LIKE '%"+key+"%' GROUP BY id_mov";
+            String query = "SELECT id_mov FROM `movies` WHERE `title` LIKE '%"+key+"%' or `director` LIKE '%"+key+"%' or `studio` LIKE '%"+key+"%' GROUP BY id_mov";
             System.out.println(query);
             db.setRs(query);
             ResultSet rs = db.getRs();

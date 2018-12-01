@@ -36,6 +36,7 @@ public class ControllerSignIn extends defaultController{
                     if(model.checkUser(view.getUname(), view.getPass())){
                         setUser();
                         toHome();
+                        closeView();
                     }else{
                         System.out.println("Login failed");
                         view.reset();
@@ -53,15 +54,21 @@ public class ControllerSignIn extends defaultController{
                 toSignUp();
             }
         });
+        
+        //atur exit
+        this.view.setExitEvent(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                closeView();
+            }
+        });
     }
 
+    public void closeView(){
+        this.view.dispose();
+    }
     
-    public void toHome(){
-        ControllerHome home = new ControllerHome(new ViewHome(), new Home());
-        home.showView();
-        view.dispose();
 
-    }
     
     public void toSignUp(){
        ControllerSignUp up = new ControllerSignUp(new ViewSignUp(), new User());

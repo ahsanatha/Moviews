@@ -62,6 +62,31 @@ public class ControllerMoviePage extends defaultController {
                 }
             }
         });
+        this.view.setHomeEvent(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                toHomeCall();
+                closeView();
+            }
+        });
+        
+        this.view.setSearchEvent(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                searchCall();
+                closeView();
+            }
+        });
+    }
+    public void toHomeCall(){
+        toHome();
+    }
+    public void searchCall(){
+        search(this.view.getSearchBox());
+    }
+    
+    public void closeView(){
+        this.view.dispose();
     }
 
     public void submitRatRev() throws SQLException, ParseException {
@@ -102,6 +127,7 @@ public class ControllerMoviePage extends defaultController {
     }
 
     public void toMovieList() {
+        this.movie = null;
         this.view.dispose();
     }
 
