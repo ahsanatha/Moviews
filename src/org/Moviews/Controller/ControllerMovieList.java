@@ -167,7 +167,7 @@ public class ControllerMovieList extends defaultController{
         ControllerMoviePage mp = new ControllerMoviePage(vmp, new UserMovies());
         mp.ShowView();
 
-        this.view.dispose();
+        //this.view.dispose();
         
     }
 }

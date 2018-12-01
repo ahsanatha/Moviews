@@ -98,18 +98,16 @@ public class UserMovies extends Model{
         db.Disconnect();
     }
 
-    public void updateData(Movies m) {
+    public void updateData(UserMovies um) {
         Database db = new Database();
         db.Connect();
-        String query = "UPDATE `movies` SET ";
-        query += "`title`= '"+m.getTitle()+"',";
-        query += "`sinopsis`= '"+m.getSinopsis()+"',";
-        query += "`release`= '"+m.getRelease()+"',";
-        query += "`duration`= "+m.getDuration()+",";
-        query += "`director`= '"+m.getDirector()+"',";
-        query += "`studio`= '"+m.getStudio()+"',";
-        query += "`ratingfilm`= "+m.getRatingfilm()+"";
-        query += " WHERE `id_mov` = '"+m.getId_mov()+"';";
+        String query = "UPDATE `usermovies` SET ";
+        //query += "`id_ratrev`= '"+um.getId_retrev()+"',";
+        query += "`id_mov`= '"+um.getId_mov()+"',";
+        query += "`id_user`= '"+um.getId_user()+"',";
+        query += "`rating_user`= "+um.getRating_user()+",";
+        query += "`review_user`= '"+um.getReview_user()+"'";
+        query += "WHERE `id_retrev` = '"+um.getId_retrev()+"'";
         System.out.println(query);
         if(db.Manipulate(query)){
             System.out.println("Data berhasil di update ke database!");
@@ -126,6 +124,7 @@ public class UserMovies extends Model{
         db.Connect();
         String query = "SELECT * FROM `usermovies` WHERE `id_mov`='"+id_mov+"' and `id_user`='"+id_user+"'";
         db.setRs(query);
+        System.out.println(query);
         ResultSet rs = db.getRs();
         try {
             if(!db.isRsEmpty(rs)){

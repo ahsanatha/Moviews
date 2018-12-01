@@ -200,7 +200,7 @@ public class ViewMoviePage extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        lbJudul.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lbJudul.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         lbJudul.setText("[Film Title]");
 
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -347,6 +347,9 @@ public class ViewMoviePage extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        listReview.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        listReview.setName("Review"); // NOI18N
+        listReview.setVisibleRowCount(10);
         jScrollPane5.setViewportView(listReview);
 
         jLabel7.setText("Reviews for this movie :");
@@ -429,7 +432,7 @@ public class ViewMoviePage extends javax.swing.JFrame {
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 

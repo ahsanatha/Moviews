@@ -48,9 +48,7 @@ public class Movies extends Model{
     public Movies() {
         
     }
-    
-
-    
+ 
     public String getId_mov() {
         return id_mov;
     }
