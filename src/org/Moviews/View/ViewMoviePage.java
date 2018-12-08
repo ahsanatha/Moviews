@@ -243,6 +243,8 @@ public class ViewMoviePage extends javax.swing.JFrame {
 
         taSinopsis.setColumns(20);
         taSinopsis.setRows(5);
+        taSinopsis.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        taSinopsis.setEnabled(false);
         jScrollPane2.setViewportView(taSinopsis);
 
         jLabel1.setText("Director : ");

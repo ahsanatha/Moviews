@@ -43,8 +43,8 @@ public class ControllerMoviePage extends defaultController {
         //untuk mengecek apakah user pernah memberikan review di suatu film, jika iya, maka tampilkan reviewnya di kotak review
         UserMovies um = model.cekReview(movie.getId_mov(), user.getId_user());
         if (um != null) {
-            this.view.setReview(um.getReview_user());
-            this.view.setRating(um.getRating_user());
+            this.view.setReview(this.model.getReview_user());
+            this.view.setRating(this.model.getRating_user());
             //System.out.println("udah pernah review, id:"+um.getId_retrev());
             this.pernahReview = true;
         }
